@@ -1,0 +1,10 @@
+public enum ResistanceTypes
+{
+    ICE_RESISTANCE = 1,
+    POISON_RESISTANCE = 2,
+    LIGHTNING_RESISTANCE = 3,
+    FIRE_RESISTANCE = 4,
+    EARTH_RESISTANCE = 5,
+    WIND_RESISTANCE = 6,
+    WATER_RESISTANCE = 7,
+}

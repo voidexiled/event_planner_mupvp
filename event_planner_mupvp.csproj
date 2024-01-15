@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>winexe</OutputType>
+    <OutputTypeEx>winexe</OutputTypeEx>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>true</SelfContained>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <AssemblyName>MUPVP STAFF TOOL</AssemblyName>
+    <Version>1.0.0</Version>
+    <Description>Aplicacion oficial para el STAFF de MU PVP ONLINE</Description>
+    <Company>Kxacez</Company>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <PackageIcon>kisspng-mu-online-mu-legend-game-download-mu-online-5b20f40fba1560.8123261615288862877622.png</PackageIcon>
+    
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\..\Downloads\kisspng-mu-online-mu-legend-game-download-mu-online-5b20f40fba1560.8123261615288862877622.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+  <ItemGroup> 
+  <Content Include="data\**"> 
+    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory> 
+  </Content> 
+</ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="ClickableTransparentOverlay" Version="9.2.0" />
+    <PackageReference Include="FirebaseAdmin" Version="2.4.0" />
+    <PackageReference Include="FireSharp" Version="2.0.4" />
+    <PackageReference Include="ImGui.NET" Version="1.90.0.1" />
+    <PackageReference Include="SixLabors.Fonts" Version="2.0.1" />
+    <PackageReference Include="SixLabors.ImageSharp" Version="3.1.2" />
+    <PackageReference Include="Veldrid.ImGui" Version="5.72.0" />
+    <PackageReference Include="Vortice.D3DCompiler" Version="3.3.4" />
+    <PackageReference Include="Vortice.Direct3D11" Version="3.3.4" />
+    <PackageReference Include="Vortice.Mathematics" Version="1.7.6" />
+  </ItemGroup>
+
+</Project>

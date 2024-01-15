@@ -1,0 +1,20 @@
+C:\Users\jalom\Desktop\NPM Projects\CS\event_planner_mupvp\bin\Debug\net7.0-windows\win-x64\publish\MUPVP STAFF TOOL.pdb
+C:\Users\jalom\Desktop\NPM Projects\CS\event_planner_mupvp\bin\Debug\net7.0-windows\win-x64\publish\data\Armors.txt
+C:\Users\jalom\Desktop\NPM Projects\CS\event_planner_mupvp\bin\Debug\net7.0-windows\win-x64\publish\data\Axes.txt
+C:\Users\jalom\Desktop\NPM Projects\CS\event_planner_mupvp\bin\Debug\net7.0-windows\win-x64\publish\data\Boots.txt
+C:\Users\jalom\Desktop\NPM Projects\CS\event_planner_mupvp\bin\Debug\net7.0-windows\win-x64\publish\data\Bows.txt
+C:\Users\jalom\Desktop\NPM Projects\CS\event_planner_mupvp\bin\Debug\net7.0-windows\win-x64\publish\data\ConsumablesJewelsBoxes.txt
+C:\Users\jalom\Desktop\NPM Projects\CS\event_planner_mupvp\bin\Debug\net7.0-windows\win-x64\publish\data\Gloves.txt
+C:\Users\jalom\Desktop\NPM Projects\CS\event_planner_mupvp\bin\Debug\net7.0-windows\win-x64\publish\data\Helmets.txt
+C:\Users\jalom\Desktop\NPM Projects\CS\event_planner_mupvp\bin\Debug\net7.0-windows\win-x64\publish\data\Maces.txt
+C:\Users\jalom\Desktop\NPM Projects\CS\event_planner_mupvp\bin\Debug\net7.0-windows\win-x64\publish\data\Pants.txt
+C:\Users\jalom\Desktop\NPM Projects\CS\event_planner_mupvp\bin\Debug\net7.0-windows\win-x64\publish\data\PetsAcc.txt
+C:\Users\jalom\Desktop\NPM Projects\CS\event_planner_mupvp\bin\Debug\net7.0-windows\win-x64\publish\data\ScrollsParchments.txt
+C:\Users\jalom\Desktop\NPM Projects\CS\event_planner_mupvp\bin\Debug\net7.0-windows\win-x64\publish\data\Shields.txt
+C:\Users\jalom\Desktop\NPM Projects\CS\event_planner_mupvp\bin\Debug\net7.0-windows\win-x64\publish\data\Spears.txt
+C:\Users\jalom\Desktop\NPM Projects\CS\event_planner_mupvp\bin\Debug\net7.0-windows\win-x64\publish\data\Staffs.txt
+C:\Users\jalom\Desktop\NPM Projects\CS\event_planner_mupvp\bin\Debug\net7.0-windows\win-x64\publish\data\Swords.txt
+C:\Users\jalom\Desktop\NPM Projects\CS\event_planner_mupvp\bin\Debug\net7.0-windows\win-x64\publish\data\Wings.txt
+C:\Users\jalom\Desktop\NPM Projects\CS\event_planner_mupvp\bin\Debug\net7.0-windows\win-x64\publish\cimgui.dll
+C:\Users\jalom\Desktop\NPM Projects\CS\event_planner_mupvp\bin\Debug\net7.0-windows\win-x64\publish\SDL2.dll
+C:\Users\jalom\Desktop\NPM Projects\CS\event_planner_mupvp\bin\Debug\net7.0-windows\win-x64\publish\MUPVP STAFF TOOL.exe

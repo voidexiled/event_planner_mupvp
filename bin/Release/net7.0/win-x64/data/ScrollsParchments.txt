@@ -1,0 +1,37 @@
+0        11      0       1       2        1            0            1          "Scroll of Poison"                   30      0          100         17000      1       0       0       1       0       0       0
+1        11      0       1       2        1            0            1          "Scroll of Meteorite"                21      0          100         11000      1       0       0       1       0       1       0
+2        11      0       1       2        1            0            1          "Scroll of Lighting"                 13      0          100         3000       1       0       0       1       0       0       0
+3        11      0       1       2        1            0            1          "Scroll of Fire Ball"                5       0          100         300        1       0       0       1       0       1       0
+4        11      0       1       2        1            0            1          "Scroll of Flame"                    35      0          100         21000      1       0       0       1       0       0       0
+5        11      0       1       2        1            0            1          "Scroll of Teleport"                 17      0          100         5000       1       0       0       0       0       0       0
+6        11      0       1       2        1            0            1          "Scroll of Ice"                      25      0          100         14000      1       0       0       1       0       1       0
+7        11      0       1       2        1            0            1          "Scroll of Twister"                  40      0          100         25000      1       0       0       1       0       0       0
+8        11      0       1       2        1            0            1          "Scroll of Evil Spirit"              50      0          100         35000      1       0       0       1       0       0       0
+9        11      0       1       2        1            0            1          "Scroll of Hellfire"                 60      0          100         60000      1       0       0       1       0       0       0
+10       11      0       1       2        1            0            1          "Scroll of Power Wave"               9       0          100         1150       1       0       0       1       0       1       0
+11       11      0       1       2        1            0            1          "Scroll of Aqua Beam"                74      0          110         100000     1       0       0       1       0       0       0
+12       11      0       1       2        1            0            1          "Scroll of Cometfall"                80      0          150         175000     1       0       0       1       0       0       0
+13       11      0       1       2        1            0            1          "Scroll of Inferno"                  88      0          200         265000     1       0       0       1       0       0       0
+14       11      0       1       2        1            0            1          "Scroll of Teleport Ally"            83      0          188         245000     2       0       0       0       0       0       0
+15       11      0       1       2        1            0            1          "Scroll of Soul Barrier"             77      0          126         135000     1       0       0       0       0       0       0
+16       11      0       1       2        1            0            1          "Scroll of Decay"                    96      0          243         345000     2       0       0       0       0       0       0
+17       11      0       1       2        1            0            1          "Scroll of Ice Storm"                93      0          223         315000     2       0       0       0       0       0       0
+18       11      0       1       2        1            0            1          "Scroll of Nova"                     100     0          258         410000     2       0       0       0       0       0       0
+
+19       11      0       1       2        1            0            0          "Chain Lightning Parchment"          75      0          75          175000     0       0       0       0       0       1       0
+20       11      0       1       2        1            0            0          "Drain Life Parchment"               35      0          93          100000     0       0       0       0       0       1       0
+21       11      0       1       2        1            0            0          "Lightning Shock Parchment"          93      0          216         315000     0       0       0       0       0       1       0
+22       11      0       1       2        1            0            0          "Damage Reflection Parchment"        80      0          111         245000     0       0       0       0       0       1       0
+23       11      0       1       2        1            0            0          "Berserker Parchment"                83      0          181         265000     0       0       0       0       0       1       0
+24       11      0       1       2        1            0            0          "Sleep Parchment"                    40      0          100         135000     0       0       0       0       0       1       0
+26       11      0       1       2        1            0            0          "Weakness Parchment"                 93      0          173         410000     0       0       0       0       0       2       0
+27       11      0       1       2        1            0            0          "Innovation Parchment"               111     0          201         450000     0       0       0       0       0       2       0
+28       11      0       1       2        1            0            0          "Scroll of Wizardry Enhance"         100     220        118         425000     2       0       0       0       0       0       0
+29       11      0       1       2        1            0            0          "Scroll of Gigantic Storm"           100     220        118         380000     0       0       0       1       0       0       0
+30       11      0       1       2        1            0            0          "Chain Driver Parchment"             80      150        0           175000     0       0       0       0       0       0       1
+31       11      0       1       2        1            0            0          "Dark Side Parchment"                100     180        0           345000     0       0       0       0       0       0       1
+32       11      0       1       2        1            0            0          "Dragon Lore Parchment"              90      150        0           265000     0       0       0       0       0       0       1
+33       11      0       1       2        1            0            0          "Dragon Slayer Parchment"            100     200        0           345000     0       0       0       0       0       0       1
+34       11      0       1       2        1            0            0          "Red Armor Ignore Parchment"         100     120        0           345000     0       0       0       0       0       0       1
+35       11      0       1       2        1            0            0          "Fitness Parchment"                  90      80         0           265000     0       0       0       0       0       0       1
+36       11      0       1       2        1            0            0          "Defense Rate Parchment"             70      50         0           60000      0       0       0       0       0       0       1

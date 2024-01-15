@@ -1,0 +1,85 @@
+0	    	"Bronze Armor"          0       1       0       1       1       0       0
+1	    	"Dragon Armor"          0       1       0       1       0       0       0
+2	    	"Pad Armor"             1       0       0       1       0       0       0
+3	    	"Legendary Armor"       1       0       0       1       0       0       0
+4	    	"Bone Armor"            1       0       0       1       0       0       0
+5	    	"Leather Armor"         0       1       0       1       1       0       0
+6	    	"Scale Armor"           0       1       0       1       1       0       1
+7	    	"Sphinx Armor"          1       0       0       1       0       0       0
+8	    	"Brass Armor"           0       1       0       1       0       0       1
+9	    	"Plate Armor"           0       1       0       1       0       0       1
+10	    	"Vine Armor"            0       0       1       0       0       0       0
+11	    	"Silk Armor"            0       0       1       0       0       0       0
+12	    	"Wind Armor"            0       0       1       0       0       0       0
+13	    	"Spirit Armor"          0       0       1       0       0       0       0
+14	    	"Guardian Armor"        0       0       1       0       0       0       0
+15	    	"Storm Crow Armor"      0       0       0       1       0       0       0
+16	    	"Black Dragon Armor"    0       1       0       0       0       0       0
+17	    	"Dark Phoenix Armor"    0       2       0       0       0       0       0
+18	    	"Grand Soul Armor"      2       0       0       0       0       0       0
+19	    	"Divine Armor"          0       0       2       0       0       0       0
+20	    	"Thunder Hawk Armor"    0       0       0       1       0       0       0
+21	    	"Great Dragon Armor"    0       2       0       0       0       0       0
+22	    	"Dark Soul Armor"       2       0       0       0       0       0       0
+23	    	"Hurricane Armor"       0       0       0       1       0       0       0
+24	    	"Red Sprit Armor"       0       0       2       0       0       0       0
+25	    	"Light Plate Armor"     0       0       0       0       1       0       0
+26	    	"Adamantine Armor"      0       0       0       0       1       0       0
+27	    	"Dark Steel Armor"      0       0       0       0       1       0       0
+28	    	"Dark Master Armor"     0       0       0       0       1       0       0
+29          "Dragon Knight Armor"   0       2       0       0       0       0       0
+30          "Venom Mist Armor"      2       0       0       0       0       0       0
+
+31       "Sylphid Ray Armor"                    0       0       2       0       0       0       0
+32       "Volcano Armor"                        0       0       0       1       0       0       0
+33       "Sunlight Armor"                       0       0       0       0       1       0       0
+34       "Ashcrow Armor"                        0       1       0       0       0       0       0
+35       "Eclipse Armor"                        1       0       0       0       0       0       0
+36       "Iris Armor"                           0       0       1       0       0       0       0
+37       "Valiant Armor"                        0       0       0       1       0       0       0
+38       "Glorious Armor"                       0       0       0       0       1       0       0
+39       "Violent Wind Armor"                   0       0       0       0       0       1       0
+40       "Red Wing Armor"                       0       0       0       0       0       1       0
+41       "Ancient Armor"                        0       0       0       0       0       1       0
+42       "Demonic Armor"                        0       0       0       0       0       2       0
+43       "Storm Blitz Armor"                    0       0       0       0       0       2       0
+44       "Lilium Armor"                         0		0	    0		0		0		2		0
+45       "Titan Armor"                          0       1       0       0       0       0       0
+46       "Brave Armor"                          0       1       0       0       0       0       0
+47       "Phantom Armor"                        0       0       0       1       0       0       0
+48       "Destroy Armor"                        0       0       0       1       0       0       0
+49       "Seraphim Armor"                       0       0       1       0       0       0       0
+50       "Divine Armor"                         0       0       1       0       0       0       0
+51       "Royal Armor"                          0       0       0       0       1       0       0
+52       "Hades Armor"                          1       0       0       0       0       0       0
+53       "Queen Armor"                          0       0       0       0       0       2       0
+59       "Sacred Armor"                         0       0       0       0       0       0       1
+60       "Storm Hard Armor"                     0       0       0       0       0       0       1
+61       "Piercing Armor"                       0       0       0       0       0       0       1
+62       "Lucky Scale Armor"                    0       0       1       0       1       0       1
+63       "Lucky Silk Armor"                     0       0       0       1       0       0       0
+64       "Lucky Sphinx Armor"                   1       0       0       0       1       0       0
+65       "Lucky Violent Wind Armor"             0       0       0       0       0       1       0
+66       "Lucky Dark Soul Armor"                0       0       0       0       0       0       1
+67       "Lucky Dragon Armor"                   0       1       0       0       0       0       0
+68       "Lucky Guardian Armor"                 0       0       1       0       0       0       0
+69       "Lucky Legendary Armor"                1       0       0       0       0       0       0
+70       "Lucky Red Wing Armor"                 0       0       0       0       0       1       0
+71       "Lucky Atlans Armor"                   0       0       0       1       0       0       0
+72       "Lucky Storm Hard Armor"               0       0       0       0       0       0       1
+73       "Phoenix Soul Armor"                   0       0       0       0       0       0       1
+74       "Hollow Armor [C]"                     2       2       1       1       1       1       1
+75       "Hollow Lady Armor [C]"                2       2       1       1       1       1       1
+76       "Santa Armor [C]"                      2       2       1       1       1       1       1
+77       "Santa Girl Armor [C]"                 2       2       1       1       1       1       1
+78       "San Valentin [M] Armor"               2       2       1       1       1       1       1
+79       "San Valentin [F] Armor"               2       2       1       1       1       1       1
+150      "San Valentin [M] Armor"               2       2       1       1       1       1       1
+151      "San Valentin [F] Armor"               2       2       1       1       1       1       1
+152      "Hollow Armor 2022 [C]"                2       2       1       1       1       1       1
+153      "Hollow Lady Armor 2022 [C]"           2       2       1       1       1       1       1
+154      "Snow Christmas Armor 2022 [C]"        2       2       1       1       1       1       1
+155      "Aniversary 2023 Armor [E]"            2       2       1       1       1       1       1
+156      "Aniversary 2023 Girl Armor [E]"       2       2       1       1       1       1       1
+157      "Easter Bunny Girl Armor [C]"          2       2       1       1       1       1       1
+158      "Easter Bunny Armor [C]"               2       2       1       1       1       1       1

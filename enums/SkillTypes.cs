@@ -1,0 +1,19 @@
+public enum SkillTypes
+{
+    SWORD_TYPE = 0,
+    AXE_TYPE = 1,
+    MACE_TYPE = 2,
+    SPEAR_TYPE = 3,
+    BOW_TYPE = 4,
+    STAFF_TYPE = 5,
+    SHIELD_TYPE = 6,
+    HELMET_TYPE = 7,
+    ARMOR_TYPE = 8,
+    PANTS_TYPE = 9,
+    GLOVES_TYPE = 10,
+    BOOTS_TYPE = 11,
+    WINGS_TYPE = 12,
+    PETS_ACC_TYPE = 13,
+    CONSUMABLES_JEWELS_BOXES_TYPE = 14,
+    SCROLLS_PARCHMENTS_TYPE = 15,
+}
