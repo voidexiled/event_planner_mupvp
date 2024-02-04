@@ -1,0 +1,917 @@
+[
+  {
+    "id": 0,
+    "image": "https://via.placeholder.com/300",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "¿Cómo hago mi segunda evolución?",
+    "body": [
+      "CONTAR CON 3,000,000 DE ZEN EN EL INVENTARIO.",
+      "ENCONTRAR AL NPC MARLON EN ALGUNA DE LAS 4 CIUDADES.",
+      "ACEPTAR LA MISIÓN.",
+      "IR A MATAR BICHOS Y RECOGER EL RING OF HONOR.",
+      "TRAERLE EL ANILLO DE REGRESO AL MARLON."
+    ],
+    "tags": ["evolucion", "evo", "2da", "como", "hago"],
+    "category": 0,
+    "author": "Kxacez",
+    "authorId": 0,
+    "isFeatured": true
+  },
+  {
+    "id": 1,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "¿Cómo encuentro a Marlón?",
+    "body": ["linea1", "linea2", "etc"],
+    "tags": [
+      "marlon",
+      "donde",
+      "se",
+      "encuentra",
+      "npc",
+      "lorencia",
+      "devias",
+      "atlans"
+    ],
+    "category": 0,
+    "author": "Kxacez",
+    "authorId": 0,
+    "isFeatured": true
+  },
+  {
+    "id": 2,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "Consejos para mejorar tu equipo",
+    "body": [
+      "REALIZAR EVENTOS PARA OBTENER ITEMS ESPECIALES.",
+      "PARTICIPAR EN BATTLEGROUND PARA GANAR PUNTOS.",
+      "COMER FRUTAS PARA AUMENTAR TU VIDA Y MANA.",
+      "COMER JEWELS OF BLESS PARA MEJORAR TU EQUIPO."
+    ],
+    "tags": ["consejos", "mejorar", "equipo", "eventos", "battleground"],
+    "category": 1,
+    "author": "MuExpert",
+    "authorId": 1,
+    "isFeatured": false
+  },
+  {
+    "id": 3,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "Cómo obtener items personalizados",
+    "body": [
+      "PARTICIPAR EN EVENTOS ESPECIALES DEL SERVIDOR.",
+      "VOTAR DIARIAMENTE PARA OBTENER RECOMPENSAS.",
+      "INTERCAMBIAR ITEMS CON OTROS JUGADORES.",
+      "COMPLETAR MISIONES DIARIAS PARA GANAR PUNTOS."
+    ],
+    "tags": ["items", "personalizados", "eventos", "votar", "intercambiar"],
+    "category": 2,
+    "author": "ItemMaster",
+    "authorId": 2,
+    "isFeatured": false
+  },
+  {
+    "id": 4,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "Guía avanzada de PvP",
+    "body": [
+      "DOMINAR LAS COMBINACIONES DE HABILIDADES.",
+      "APRENDER A CONTRARRESTAR LAS ESTRATEGIAS ENEMIGAS.",
+      "CONSEJOS PARA MEJORAR LA RESISTENCIA Y DAÑO.",
+      "UTILIZAR POCIONES Y BUFFS DE MANERA EFICIENTE."
+    ],
+    "tags": ["pvp", "avanzada", "estrategias", "combos", "buffs"],
+    "category": 3,
+    "author": "PvPPro",
+    "authorId": 3,
+    "isFeatured": false
+  },
+  {
+    "id": 5,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "Cómo subir de nivel rápidamente",
+    "body": [
+      "PARTICIPAR EN EVENTOS DE EXPERIENCIA DOBLE.",
+      "CONSEGUIR BUFFS Y AYUDAS DE OTROS JUGADORES.",
+      "FOCALIZARSE EN MISIONES Y MONSTRUOS DE ALTO NIVEL.",
+      "UTILIZAR POCIONES DE EXPERIENCIA DE MANERA ESTRATÉGICA."
+    ],
+    "tags": ["nivel", "experiencia", "rápido", "eventos", "buffs"],
+    "category": 1,
+    "author": "LevelMaster",
+    "authorId": 4,
+    "isFeatured": false
+  },
+  {
+    "id": 6,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "Secretos de la creación de personajes",
+    "body": [
+      "ELEGIR LA CLASE QUE SE AJUSTE A TU ESTILO DE JUEGO.",
+      "ASIGNAR PUNTOS DE HABILIDAD DE MANERA ESTRATÉGICA.",
+      "CONOCER LAS VENTAJAS Y DESVENTAJAS DE CADA RAZA.",
+      "UTILIZAR EL RESET DE STATS DE FORMA OPTIMA."
+    ],
+    "tags": ["personajes", "clases", "stats", "razas", "reset"],
+    "category": 0,
+    "author": "CharacterMaster",
+    "authorId": 5,
+    "isFeatured": false
+  },
+  {
+    "id": 7,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "Cómo ganar en el evento Castle Siege",
+    "body": [
+      "UNIRTE A UNA ALIANZA PODEROSA.",
+      "DEFENDER Y ATACAR ESTRATÉGICAMENTE.",
+      "UTILIZAR ELEMENTOS DEL ENTORNO A TU FAVOR.",
+      "COORDINAR ACCIONES CON TU ALIANZA."
+    ],
+    "tags": ["castle siege", "evento", "alianza", "estrategia", "ataque"],
+    "category": 3,
+    "author": "SiegeMaster",
+    "authorId": 6,
+    "isFeatured": false
+  },
+  {
+    "id": 8,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "Cómo obtener Wings de alta calidad",
+    "body": [
+      "PARTICIPAR EN EVENTOS DE ITEMS ESPECIALES.",
+      "REALIZAR COMBINACIONES DE ITEMS EN EL CHAOS MACHINE.",
+      "VOTAR DIARIAMENTE PARA OBTENER CRÉDITOS.",
+      "COMPLETAR LOGROS Y DESAFÍOS DEL JUEGO."
+    ],
+    "tags": ["wings", "calidad", "eventos", "chaos machine", "logros"],
+    "category": 2,
+    "author": "WingsMaster",
+    "authorId": 7,
+    "isFeatured": false
+  },
+  {
+    "id": 9,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "Guía para el uso eficiente de Jewels",
+    "body": [
+      "CONOCER EL VALOR DE CADA JEWEL EN EL MERCADO.",
+      "UTILIZAR JEWELS OF BLESS PARA MEJORAR ITEMS.",
+      "GUARDAR JEWELS OF SOUL PARA ENHANCING.",
+      "INTERCAMBIAR JEWELS EN EL MARKET DE FORMA INTELIGENTE."
+    ],
+    "tags": ["jewels", "mercado", "bless", "soul", "intercambio"],
+    "category": 1,
+    "author": "JewelMaster",
+    "authorId": 8,
+    "isFeatured": false
+  },
+  {
+    "id": 10,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "Cómo enfrentar a jefes de alto nivel",
+    "body": [
+      "FORMAR UN GRUPO BALANCEADO DE JUGADORES.",
+      "ESTUDIAR PATRONES DE ATAQUE Y MOVIMIENTO.",
+      "UTILIZAR POCIONES Y BUFFS ESTRATÉGICAMENTE.",
+      "COOPERAR CON OTROS GRUPOS EN EL SERVER."
+    ],
+    "tags": ["jefes", "alto nivel", "boss", "estrategias", "cooperación"],
+    "category": 3,
+    "author": "BossHunter",
+    "authorId": 9,
+    "isFeatured": false
+  },
+  {
+    "id": 11,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "Cómo configurar tu Guild correctamente",
+    "body": [
+      "ELEGIR UN NOMBRE ATRACTIVO Y REPRESENTATIVO.",
+      "DEFINIR REGLAS Y OBJETIVOS CLAROS PARA LOS MIEMBROS.",
+      "PARTICIPAR EN EVENTOS DE GUILD Y ALIANZAS.",
+      "MANTENER UNA COMUNICACIÓN EFICIENTE EN EL GUILD."
+    ],
+    "tags": ["guild", "configuración", "reglas", "eventos", "comunicación"],
+    "category": 4,
+    "author": "GuildMaster",
+    "authorId": 10,
+    "isFeatured": false
+  },
+  {
+    "id": 12,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "Guía de eventos especiales",
+    "body": [
+      "ESTAR ATENTO A LAS NOTIFICACIONES DEL SERVIDOR.",
+      "PARTICIPAR EN EVENTOS DIARIOS Y SEMANALES.",
+      "CONOCER LAS RECOMPENSAS Y CONDICIONES DE CADA EVENTO.",
+      "INVITAR A AMIGOS Y CREAR UN GRUPO PARA EVENTOS."
+    ],
+    "tags": ["eventos", "especiales", "recompensas", "diarios", "semanales"],
+    "category": 3,
+    "author": "EventMaster",
+    "authorId": 11,
+    "isFeatured": false
+  },
+  {
+    "id": 13,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "Cómo utilizar el sistema de Trade",
+    "body": [
+      "ENTENDER LOS VALORES DE LOS ITEMS EN EL MERCADO.",
+      "NEGOCIAR DE MANERA JUSTA Y EQUITATIVA.",
+      "EVITAR ESTAFAS Y FRAUDES EN LAS TRANSACCIONES.",
+      "UTILIZAR EL TRADE CHAT DE FORMA EFICIENTE."
+    ],
+    "tags": ["trade", "mercado", "negociación", "estafas", "chat"],
+    "category": 4,
+    "author": "TradeExpert",
+    "authorId": 12,
+    "isFeatured": false
+  },
+  {
+    "id": 14,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "Cómo obtener mounts y mascotas",
+    "body": [
+      "PARTICIPAR EN EVENTOS ESPECIALES DE MOUNTS.",
+      "OBTENER EGGS Y INCUBARLOS EN EL PET TRAINER.",
+      "COMPLETAR MISIONES PARA DESBLOQUEAR MOUNTS.",
+      "COLECCIONAR ITEMS ESPECIALES PARA PERSONALIZAR MASCOTAS."
+    ],
+    "tags": ["mounts", "mascotas", "eventos", "eggs", "personalización"],
+    "category": 2,
+    "author": "PetMaster",
+    "authorId": 13,
+    "isFeatured": false
+  },
+  {
+    "id": 15,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "Cómo farmear Zen eficientemente",
+    "body": [
+      "PARTICIPAR EN SPOTS DE MONSTRUOS DE ALTO NIVEL.",
+      "UTILIZAR ITEMS CON AUMENTO DE DROP RATE.",
+      "VENDER ITEMS INNECESARIOS EN EL MERCADO.",
+      "REALIZAR EVENTOS DIARIOS Y SEMANALES PARA ZEN EXTRA."
+    ],
+    "tags": ["zen", "farmeo", "spots", "drop rate", "eventos"],
+    "category": 1,
+    "author": "ZenMaster",
+    "authorId": 14,
+    "isFeatured": false
+  },
+  {
+    "id": 16,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "Cómo personalizar tu UI",
+    "body": [
+      "DESCARGAR Y CONFIGURAR INTERFACES DE USUARIO.",
+      "MODIFICAR LOS TAMAÑOS Y COLORES DE LOS ELEMENTOS.",
+      "UTILIZAR ADDONS Y PLUGINS PARA MEJORAR LA EXPERIENCIA.",
+      "CREAR Y COMPARTIR TUS PROPIOS DISEÑOS DE UI."
+    ],
+    "tags": ["UI", "personalización", "addons", "plugins", "diseño"],
+    "category": 5,
+    "author": "UIMaster",
+    "authorId": 15,
+    "isFeatured": false
+  },
+  {
+    "id": 17,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "Cómo crear y unirse a clanes",
+    "body": [
+      "ESTABLECER LOS REQUISITOS Y OBJETIVOS DEL CLAN.",
+      "INVITAR A MIEMBROS ACTIVOS Y COMPROMETIDOS.",
+      "ORGANIZAR EVENTOS Y TORNEOS INTERNOS.",
+      "PARTICIPAR EN ALIANZAS Y GUERRAS DE CLANES."
+    ],
+    "tags": ["clanes", "creación", "miembros", "eventos", "guerras"],
+    "category": 4,
+    "author": "ClanMaster",
+    "authorId": 16,
+    "isFeatured": false
+  },
+  {
+    "id": 18,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "Cómo explorar mapas secretos",
+    "body": [
+      "INVESTIGAR RINCONES Y ÁREAS POCO FRECUENTADAS.",
+      "OBTENER MAPAS SECRETOS DE MONSTRUOS O NPCS.",
+      "UTILIZAR HABILIDADES ESPECIALES O ITEMS PARA ACCEDER.",
+      "COMPARTIR DESCUBRIMIENTOS CON LA COMUNIDAD."
+    ],
+    "tags": ["mapas", "secretos", "exploración", "npcs", "habilidades"],
+    "category": 0,
+    "author": "ExplorerPro",
+    "authorId": 17,
+    "isFeatured": false
+  },
+  {
+    "id": 19,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "Cómo ser un maestro del crafting",
+    "body": [
+      "RECOLECTAR MATERIALES DE MONSTRUOS Y RECURSOS.",
+      "APRENDER RECETAS Y TÉCNICAS DE CRAFTING.",
+      "UTILIZAR HERRAMIENTAS ESPECIALES Y ESTACIONES.",
+      "CREAR ITEMS DE ALTA CALIDAD Y PERSONALIZADOS."
+    ],
+    "tags": ["crafting", "maestro", "recetas", "herramientas", "calidad"],
+    "category": 2,
+    "author": "CraftingMaster",
+    "authorId": 18,
+    "isFeatured": false
+  },
+  {
+    "id": 20,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "Guía para el sistema de duelos",
+    "body": [
+      "RETAR A OTROS JUGADORES EN ZONAS ESPECÍFICAS.",
+      "ESTABLECER REGLAS Y CONDICIONES ANTES DE LOS DUELOS.",
+      "UTILIZAR HABILIDADES Y ESTRATEGIAS DE MANERA INTELIGENTE.",
+      "PARTICIPAR EN TORNEOS Y COMPETICIONES DE DUELOS."
+    ],
+    "tags": ["duelos", "sistema", "retos", "estrategias", "torneos"],
+    "category": 3,
+    "author": "DuelMaster",
+    "authorId": 19,
+    "isFeatured": false
+  },
+  {
+    "id": 21,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "Cómo obtener items raros en el Chaos Castle",
+    "body": [
+      "PARTICIPAR EN EVENTOS DE CHAOS CASTLE.",
+      "OBTENER PUNTOS DE CAOS Y CANJEARLOS POR ITEMS.",
+      "ENFRENTAR A MONSTRUOS Y OTROS JUGADORES EN LA ARENA.",
+      "UTILIZAR ESTRATEGIAS PARA SOBREVIVIR EN EL CHAOS CASTLE."
+    ],
+    "tags": [
+      "chaos castle",
+      "items raros",
+      "eventos",
+      "puntos de caos",
+      "estrategias"
+    ],
+    "category": 3,
+    "author": "ChaosMaster",
+    "authorId": 20,
+    "isFeatured": false
+  },
+  {
+    "id": 22,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "Consejos para el comercio en el Market",
+    "body": [
+      "ESTUDIAR LA ECONOMÍA DEL SERVIDOR Y LAS TENDENCIAS DE PRECIOS.",
+      "UTILIZAR OFERTAS Y DESCUENTOS ESTRATÉGICAMENTE.",
+      "SEGUIR LAS NOTICIAS Y ACTUALIZACIONES DEL MERCADO.",
+      "SER PACIENTE Y ESPERAR OPORTUNIDADES DE COMPRA Y VENTA."
+    ],
+    "tags": ["market", "comercio", "economía", "ofertas", "estrategias"],
+    "category": 4,
+    "author": "MarketMaster",
+    "authorId": 21,
+    "isFeatured": false
+  },
+  {
+    "id": 23,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "Guía para el sistema de Marriage",
+    "body": [
+      "ENCONTRAR UNA PAREJA COMPATIBLE EN EL JUEGO.",
+      "ORGANIZAR UNA CEREMONIA DE MATRIMONIO ESPECIAL.",
+      "DISFRUTAR DE BENEFICIOS EXCLUSIVOS COMO PAREJA.",
+      "PARTICIPAR EN EVENTOS Y MISIONES PARA PAREJAS."
+    ],
+    "tags": ["marriage", "sistema", "ceremonia", "beneficios", "parejas"],
+    "category": 0,
+    "author": "LoveMaster",
+    "authorId": 22,
+    "isFeatured": false
+  },
+  {
+    "id": 24,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "Cómo obtener items de evento",
+    "body": [
+      "PARTICIPAR EN EVENTOS ESPECIALES ORGANIZADOS POR EL GM.",
+      "COMPLETAR MISIONES Y DESAFÍOS DE EVENTOS.",
+      "OBTENER TICKETS Y CANJEARLOS EN NPC ESPECIALES.",
+      "ESTAR ATENTO A ANUNCIOS DE EVENTOS EN EL SERVIDOR."
+    ],
+    "tags": ["items", "evento", "misiones", "tickets", "GM"],
+    "category": 3,
+    "author": "EventHunter",
+    "authorId": 23,
+    "isFeatured": false
+  },
+  {
+    "id": 25,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "Guía para el sistema de Reset",
+    "body": [
+      "ENTENDER LOS BENEFICIOS Y RESTRICCIONES DEL RESET.",
+      "PLANIFICAR Y ESTRATEGIZAR LA DISTRIBUCIÓN DE STATS.",
+      "UTILIZAR RESETS DE FORMA INTELIGENTE PARA MEJORAR EL PERSONAJE.",
+      "OBTENER RECOMPENSAS Y RECONOCIMIENTO POR RESETS."
+    ],
+    "tags": ["reset", "sistema", "beneficios", "estrategias", "recompensas"],
+    "category": 1,
+    "author": "ResetMaster",
+    "authorId": 24,
+    "isFeatured": false
+  },
+  {
+    "id": 26,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "Consejos para sobrevivir en el Devil Square",
+    "body": [
+      "PREPARAR UN EQUIPO Y BUFFS ANTES DE INGRESAR.",
+      "COOPERAR CON OTROS JUGADORES PARA DERROTAR A LOS MONSTRUOS.",
+      "ESTAR ATENTO A LOS ANUNCIOS DE EVENTOS EN EL DEVIL SQUARE.",
+      "UTILIZAR ESTRATEGIAS DE ATAQUE Y EVASIÓN."
+    ],
+    "tags": [
+      "devil square",
+      "sobrevivir",
+      "cooperación",
+      "estrategias",
+      "buffs"
+    ],
+    "category": 3,
+    "author": "DevilMaster",
+    "authorId": 25,
+    "isFeatured": false
+  },
+  {
+    "id": 27,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "Cómo mejorar la joyería de tu personaje",
+    "body": [
+      "CONSEGUIR JEWELS DE EXCELENTE CALIDAD.",
+      "UTILIZAR EL CHAOS MACHINE PARA MEJORAS.",
+      "PARTICIPAR EN EVENTOS DE JOYERÍA ESPECIALES.",
+      "OBTENER JOYAS ÚNICAS EN BATALLAS Y TORNEOS."
+    ],
+    "tags": ["joyería", "mejorar", "chaos machine", "eventos", "batallas"],
+    "category": 1,
+    "author": "JewelryMaster",
+    "authorId": 26,
+    "isFeatured": false
+  },
+  {
+    "id": 28,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "Secretos de los NPCs ocultos",
+    "body": [
+      "INVESTIGAR Y EXPLORAR ÁREAS MENOS FRECUENTADAS.",
+      "INTERACTUAR CON OTROS JUGADORES PARA OBTENER PISTAS.",
+      "COMPLETAR MISIONES ESPECIALES PARA DESBLOQUEAR NPCs.",
+      "DESCUBRIR BENEFICIOS Y RECOMPENSAS DE LOS NPCs OCULTOS."
+    ],
+    "tags": ["NPCs", "ocultos", "exploración", "misiones", "recompensas"],
+    "category": 0,
+    "author": "NPCMaster",
+    "authorId": 27,
+    "isFeatured": false
+  },
+  {
+    "id": 29,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "Cómo obtener items de set completo",
+    "body": [
+      "PARTICIPAR EN EVENTOS DE SETS ESPECIALES.",
+      "COMPLETAR COLECCIONES Y DESAFÍOS DEL JUEGO.",
+      "OBTENER PIEZAS DE SET EN BATALLAS Y EVENTOS PVP.",
+      "UTILIZAR COMBINACIONES ESPECIALES PARA CREAR SETS."
+    ],
+    "tags": ["set completo", "eventos", "colecciones", "pvp", "combinaciones"],
+    "category": 2,
+    "author": "SetMaster",
+    "authorId": 28,
+    "isFeatured": false
+  },
+  {
+    "id": 30,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "Cómo participar en eventos de GM",
+    "body": [
+      "ESTAR ATENTO A ANUNCIOS Y CONVOCATORIAS DEL GM.",
+      "SEGUIR LAS REGLAS Y CONDICIONES DE CADA EVENTO.",
+      "PARTICIPAR CON UNA ACTITUD POSITIVA Y DEPORTIVA.",
+      "GANAR PREMIOS Y RECONOCIMIENTO EN LOS EVENTOS."
+    ],
+    "tags": ["eventos", "GM", "convocatorias", "premios", "reconocimiento"],
+    "category": 3,
+    "author": "GMExpert",
+    "authorId": 29,
+    "isFeatured": false
+  },
+  {
+    "id": 31,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "Guía para el sistema de Master Level",
+    "body": [
+      "ENTENDER LAS VENTAJAS Y DESVENTAJAS DEL MASTER LEVEL.",
+      "PARTICIPAR EN EVENTOS ESPECIALES PARA GANAR PUNTOS.",
+      "UTILIZAR LOS PUNTOS DE MASTER DE FORMA ESTRATÉGICA.",
+      "DESARROLLAR HABILIDADES Y PODERES EXCLUSIVOS CON MASTER LEVEL."
+    ],
+    "tags": ["master level", "sistema", "eventos", "puntos", "habilidades"],
+    "category": 1,
+    "author": "MasterLeveler",
+    "authorId": 30,
+    "isFeatured": false
+  },
+  {
+    "id": 32,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "Cómo mejorar tu reputación en el servidor",
+    "body": [
+      "PARTICIPAR EN EVENTOS Y AYUDAR A OTROS JUGADORES.",
+      "EVITAR COMPORTAMIENTOS PERJUDICIALES PARA LA COMUNIDAD.",
+      "COLABORAR EN ALIANZAS Y PROYECTOS DEL SERVIDOR.",
+      "OBTENER RECOMPENSAS Y BENEFICIOS POR BUENA REPUTACIÓN."
+    ],
+    "tags": ["reputación", "servidor", "eventos", "comportamiento", "alianzas"],
+    "category": 6,
+    "author": "ReputationMaster",
+    "authorId": 31,
+    "isFeatured": false
+  },
+  {
+    "id": 33,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "Consejos para el sistema de Blood Castle",
+    "body": [
+      "PREPARAR UN GRUPO COORDINADO DE JUGADORES.",
+      "ENFRENTAR A LOS MONSTRUOS Y JEFES CON ESTRATEGIA.",
+      "PROTEGER Y DEFENDER LAS POSICIONES ASIGNADAS.",
+      "UTILIZAR HABILIDADES Y BUFFS DE FORMA SINCRONIZADA."
+    ],
+    "tags": ["blood castle", "sistema", "grupos", "estrategias", "buffs"],
+    "category": 3,
+    "author": "BloodMaster",
+    "authorId": 32,
+    "isFeatured": false
+  },
+  {
+    "id": 34,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "Cómo obtener items de la Chaos Card",
+    "body": [
+      "PARTICIPAR EN EVENTOS ESPECIALES DE CHAOS CARD.",
+      "OBTENER CHAOS CARD BOXES EN BATALLAS Y MISIONES.",
+      "DESCUBRIR LOS CONTENIDOS Y RECOMPENSAS DE CADA CHAOS CARD.",
+      "UTILIZAR ESTRATEGIAS PARA AUMENTAR LAS PROBABILIDADES DE ÉXITO."
+    ],
+    "tags": ["chaos card", "eventos", "boxes", "recompensas", "estrategias"],
+    "category": 2,
+    "author": "CardMaster",
+    "authorId": 33,
+    "isFeatured": false
+  },
+  {
+    "id": 35,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v/3v4G5n3z5YQ",
+    "title": "Guía para el sistema de Illusion Temple",
+    "body": [
+      "FORMAR UN GRUPO COORDINADO ANTES DE ENTRAR.",
+      "ESTUDIAR LOS PATRONES Y REGLAS DE CADA NIVEL.",
+      "UTILIZAR HABILIDADES Y ESTRATEGIAS EN CONJUNTO.",
+      "GANAR PUNTOS Y RECOMPENSAS POR PARTICIPACIÓN Y ÉXITO."
+    ],
+    "tags": [
+      "illusion temple",
+      "sistema",
+      "grupos",
+      "estrategias",
+      "recompensas"
+    ],
+    "category": 3,
+    "author": "IllusionMaster",
+    "authorId": 34,
+    "isFeatured": false
+  },
+  {
+    "id": 36,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "Secretos de los eventos de invasión",
+    "body": [
+      "ESTAR ALERTA A LAS SEÑALES DE INVASIÓN.",
+      "PREPARAR UN GRUPO DE DEFENSA RÁPIDA.",
+      "UTILIZAR ITEMS Y HABILIDADES ANTI-INVASIÓN.",
+      "COLABORAR CON OTRAS FACCIÓNES Y GUILD PARA DEFENDER EL SERVIDOR."
+    ],
+    "tags": ["invasión", "eventos", "defensa", "anti-invasión", "colaboración"],
+    "category": 3,
+    "author": "InvasionMaster",
+    "authorId": 35,
+    "isFeatured": false
+  },
+  {
+    "id": 37,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "Cómo subir de nivel de forma eficiente",
+    "body": [
+      "PARTICIPAR EN EVENTOS DE EXPERIENCIA Y BOOSTS.",
+      "FORMAR GRUPOS PARA COMPARTIR EXPERIENCIA.",
+      "REALIZAR MISIONES Y DESAFÍOS PARA EXP ADICIONAL.",
+      "UTILIZAR ITEMS Y POCIONES DE EXPERIENCIA INTELIGENTEMENTE."
+    ],
+    "tags": ["nivel", "experiencia", "eventos", "grupos", "pociones"],
+    "category": 1,
+    "author": "LevelMaster",
+    "authorId": 36,
+    "isFeatured": false
+  },
+  {
+    "id": 38,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "Secretos de la Dark Invasion",
+    "body": [
+      "PREPARAR EQUIPO Y DEFENSAS ANTES DE LA INVASIÓN.",
+      "COOPERAR CON OTROS JUGADORES PARA DEFENDER EL SERVIDOR.",
+      "UTILIZAR HABILIDADES Y ESTRATEGIAS DE FORMA TÁCTICA.",
+      "GANAR RECOMPENSAS Y RECONOCIMIENTO POR VALOR EN LA DARK INVASIÓN."
+    ],
+    "tags": [
+      "dark invasion",
+      "secretos",
+      "defensas",
+      "estrategias",
+      "recompensas"
+    ],
+    "category": 3,
+    "author": "DarkInvasionMaster",
+    "authorId": 37,
+    "isFeatured": false
+  },
+  {
+    "id": 39,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "Guía para el sistema de MuRoomy",
+    "body": [
+      "PARTICIPAR EN EVENTOS DE MUROOMY.",
+      "RECOLECTAR Y CANJEAR ITEMS ESPECIALES DE MUROOMY.",
+      "DESCUBRIR LOS NIVELES Y DIFICULTADES DE MUROOMY.",
+      "OBTENER RECOMPENSAS EXCLUSIVAS POR VICTORIAS EN MUROOMY."
+    ],
+    "tags": ["muroomy", "sistema", "eventos", "recompensas", "victorias"],
+    "category": 3,
+    "author": "MuRoomyMaster",
+    "authorId": 38,
+    "isFeatured": false
+  },
+  {
+    "id": 40,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "Cómo enfrentar a jugadores PK",
+    "body": [
+      "CONOCER LAS ZONAS PK Y LOS NIVELES DE PELIGRO.",
+      "UTILIZAR ITEMS DE PROTECCIÓN Y ESCAPAR DE SITUACIONES PELIGROSAS.",
+      "FORMAR GRUPOS DE DEFENSA CONTRA JUGADORES PK.",
+      "PARTICIPAR EN EVENTOS Y COMPETICIONES PK PARA MEJORAR HABILIDADES."
+    ],
+    "tags": ["jugadores PK", "zonas PK", "protección", "eventos PK", "defensa"],
+    "category": 3,
+    "author": "PKMaster",
+    "authorId": 39,
+    "isFeatured": false
+  },
+  {
+    "id": 41,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "Secretos de los eventos Double Goer y Imperial Guardian",
+    "body": [
+      "FORMAR GRUPOS BALANCEADOS Y COORDINADOS.",
+      "ESTUDIAR LOS PATRONES DE CADA EVENTO.",
+      "UTILIZAR ESTRATEGIAS DE ATAQUE Y DEFENSA.",
+      "OBTENER RECOMPENSAS ÉPICAS POR PARTICIPACIÓN Y ÉXITO."
+    ],
+    "tags": [
+      "double goer",
+      "imperial guardian",
+      "secretos",
+      "estrategias",
+      "recompensas"
+    ],
+    "category": 3,
+    "author": "DoubleImperialMaster",
+    "authorId": 40,
+    "isFeatured": false
+  },
+  {
+    "id": 42,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "Cómo obtener items de la Swamp of Darkness",
+    "body": [
+      "PARTICIPAR EN EVENTOS ESPECIALES DE SWAMP OF DARKNESS.",
+      "ENFRENTAR A MONSTRUOS Y OTROS JUGADORES EN LA ZONA.",
+      "DESCUBRIR LOS SECRETOS Y UBICACIONES ESPECIALES EN LA SWAMP OF DARKNESS.",
+      "OBTENER ITEMS ÚNICOS Y RECOMPENSAS POR AVENTURAS EN LA ZONA."
+    ],
+    "tags": [
+      "swamp of darkness",
+      "eventos",
+      "monstruos",
+      "secretos",
+      "recompensas"
+    ],
+    "category": 2,
+    "author": "SwampMaster",
+    "authorId": 41,
+    "isFeatured": false
+  },
+  {
+    "id": 43,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "Guía para el sistema de Arca War",
+    "body": [
+      "PREPARAR ESTRATEGIAS DE ATAQUE Y DEFENSA.",
+      "COORDINAR CON ALIANZAS Y OTROS GUILD.",
+      "ENTENDER LAS REGLAS Y CONDICIONES DE ARCA WAR.",
+      "OBTENER PUNTOS Y BENEFICIOS POR VICTORIAS EN ARCA WAR."
+    ],
+    "tags": ["arca war", "sistema", "estrategias", "alianzas", "recompensas"],
+
+    "category": 3,
+    "author": "ArcaWarMaster",
+    "authorId": 42,
+    "isFeatured": false
+  },
+  {
+    "id": 44,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "Consejos para el sistema de Mercenaries",
+    "body": [
+      "RECLUTAR Y FORMAR UN PODEROSO EJÉRCITO DE MERCENARIOS.",
+      "PARTICIPAR EN BATALLAS Y EVENTOS ESPECIALES DE MERCENARIOS.",
+      "UTILIZAR ESTRATEGIAS Y FORMACIONES EN EL CAMPO DE BATALLA.",
+      "OBTENER RECOMPENSAS Y RECONOCIMIENTO COMO LÍDER DE MERCENARIOS."
+    ],
+    "tags": [
+      "mercenarios",
+      "sistema",
+      "batallas",
+      "estrategias",
+      "recompensas"
+    ],
+    "category": 3,
+    "author": "MercenaryMaster",
+    "authorId": 43,
+    "isFeatured": false
+  },
+  {
+    "id": 45,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "Secretos de los eventos Raklion y Selupan",
+    "body": [
+      "PREPARAR EQUIPO Y ESTRATEGIAS ANTES DE CADA EVENTO.",
+      "ENFRENTAR A PODEROSOS JEFES CON COORDINACIÓN Y HABILIDAD.",
+      "DESCUBRIR LOS SECRETOS Y RECOMPENSAS DE RAKLION Y SELUPAN.",
+      "OBTENER ITEMS ÚNICOS Y BENEFICIOS EXCLUSIVOS POR VICTORIAS."
+    ],
+    "tags": ["raklion", "selupan", "secretos", "estrategias", "recompensas"],
+    "category": 2,
+    "author": "RakSeluMaster",
+    "authorId": 44,
+    "isFeatured": false
+  },
+  {
+    "id": 46,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "Guía para el sistema de Crywolf",
+    "body": [
+      "PARTICIPAR EN EVENTOS Y BATALLAS DE CRYWOLF.",
+      "ENTENDER LA DINÁMICA DE LOS ATAQUES Y DEFENSAS.",
+      "UTILIZAR HABILIDADES Y ESTRATEGIAS EN EL CAMPO DE BATALLA.",
+      "OBTENER RECOMPENSAS Y BENEFICIOS POR VICTORIAS EN CRYWOLF."
+    ],
+    "tags": ["crywolf", "sistema", "eventos", "estrategias", "recompensas"],
+    "category": 3,
+    "author": "CrywolfMaster",
+    "authorId": 45,
+    "isFeatured": false
+  },
+  {
+    "id": 47,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v/3v4G5n3z5YQ",
+    "title": "Consejos para el sistema de Kanturu",
+    "body": [
+      "PREPARAR EQUIPO Y POTIONS ANTES DE LAS BATALLAS.",
+      "COORDINAR CON ALIANZAS Y OTROS GUILD EN KANTURU.",
+      "ENTENDER LAS ESTRATEGIAS DE LOS JEFES Y MONSTRUOS EN KANTURU.",
+      "OBTENER BENEFICIOS Y RECOMPENSAS POR PARTICIPACIÓN Y VICTORIAS."
+    ],
+    "tags": ["kanturu", "sistema", "equipo", "estrategias", "recompensas"],
+    "category": 3,
+    "author": "KanturuMaster",
+    "authorId": 46,
+    "isFeatured": false
+  },
+  {
+    "id": 48,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "Secretos de los eventos Castle Siege",
+    "body": [
+      "FORMAR ALIANZAS Y PLANIFICAR ESTRATEGIAS ANTES DE CADA ASALTO.",
+      "DEFENDER Y ATACAR POSICIONES CLAVE EN EL CASTLE SIEGE.",
+      "UTILIZAR HABILIDADES Y RECURSOS DE FORMA ESTRATÉGICA.",
+      "OBTENER EL CONTROL DEL CASTILLO Y BENEFICIOS PARA EL GUILD."
+    ],
+    "tags": ["castle siege", "secretos", "estrategias", "guild", "beneficios"],
+    "category": 3,
+    "author": "CastleSiegeMaster",
+    "authorId": 47,
+    "isFeatured": false
+  },
+  {
+    "id": 49,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "Guía para el sistema de Loren Deep",
+    "body": [
+      "PARTICIPAR EN EVENTOS Y MISIONES DE LOREN DEEP.",
+      "EXPLORAR LAS PROFUNDIDADES Y SECRETOS DE LOREN DEEP.",
+      "UTILIZAR ITEMS Y HABILIDADES ESPECIALES EN LA ZONA.",
+      "OBTENER RECOMPENSAS Y LOGROS POR AVENTURAS EN LOREN DEEP."
+    ],
+    "tags": ["loren deep", "sistema", "eventos", "secretos", "recompensas"],
+    "category": 2,
+    "author": "LorenDeepMaster",
+    "authorId": 48,
+    "isFeatured": false
+  },
+  {
+    "id": 50,
+    "image": "https://via.placeholder.com/150",
+    "video": "https://www.youtube.com/watch?v=3v4G5n3z5YQ",
+    "title": "Consejos para el sistema de Karutan",
+    "body": [
+      "PARTICIPAR EN EVENTOS Y MISIONES DE KARUTAN.",
+      "ENFRENTAR A PODEROSOS JEFES Y MONSTRUOS EN KARUTAN.",
+      "UTILIZAR ESTRATEGIAS DE ATAQUE Y DEFENSA EN LA ZONA.",
+      "OBTENER RECOMPENSAS Y BENEFICIOS POR VICTORIAS EN KARUTAN."
+    ],
+    "tags": ["karutan", "sistema", "eventos", "estrategias", "recompensas"],
+    "category": 3,
+    "author": "KarutanMaster",
+    "authorId": 49,
+    "isFeatured": false
+  }
+]

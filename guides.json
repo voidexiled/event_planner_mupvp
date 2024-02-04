@@ -1,0 +1,950 @@
+[
+  {
+    "id": 0,
+    "image": "https://i.imgur.com/CUgYgy7.jpeg",
+    "video": "",
+    "title": "¿Donde está el NPC Marlon?",
+    "body": [
+      "Para encontrar al NPC Marlon, dirígete a Devias, una gélida ciudad llena de secretos.",
+      "Explora cada rincón y rastrea las pistas que te lleven a la ubicación actual de Marlon.",
+      "No te confíes de información antigua, ya que Marlon suele cambiar de ubicación periódicamente.",
+      "Habla con otros jugadores, comparte información y mantente al tanto de los foros del juego.",
+      "Recuerda, la búsqueda de Marlon puede convertirse en una aventura épica llena de desafíos y recompensas."
+    ],
+    "tags": [
+      "evolucion",
+      "npc",
+      "ubicacion",
+      "marlon",
+      "etc",
+      "encontrar",
+      "donde"
+    ],
+    "category": 0,
+    "featured": false,
+    "related_guides": [1],
+    "comments": [
+      {
+        "id": 0,
+        "body": "¡Esta guía me salvó la vida! Pero Marlon ya no está en Devias, ¡actualicen la información!",
+        "authorId": 0,
+        "author": "Kxacez",
+        "date": "2024-02-02",
+        "likes": 0,
+        "dislikes": 0
+      }
+    ],
+    "status": "active",
+    "likes": 0,
+    "dislikes": 0,
+    "date": "2024-02-02",
+    "authorId": 0,
+    "author": "Kxacez"
+  },
+  {
+    "id": 1,
+    "image": "https://i.ibb.co/ssv1Hz6/IMG-2169.jpg",
+    "video": "",
+    "title": "¿Cómo encuentro a Marlon?",
+    "body": [
+      "En tu búsqueda de Marlon, explora las ciudades de Lorencia, Noria, Devias y Atlans.",
+      "Estos lugares suelen ser los destinos más frecuentes del misterioso NPC.",
+      "Habla con otros jugadores para obtener pistas y consejos sobre la ubicación actual de Marlon.",
+      "Consulta los foros y sitios de la comunidad para obtener información actualizada.",
+      "Recuerda que la colaboración con otros jugadores puede hacer que tu búsqueda sea más fácil y divertida."
+    ],
+    "tags": [
+      "marlon",
+      "donde",
+      "se",
+      "encuentra",
+      "npc",
+      "lorencia",
+      "devias",
+      "atlans"
+    ],
+    "category": 0,
+    "featured": false,
+    "related_guides": [],
+    "comments": [],
+    "status": "active",
+    "likes": 0,
+    "dislikes": 0,
+    "date": "2024-02-02",
+    "authorId": 0,
+    "author": "Kxacez"
+  },
+  {
+    "id": 2,
+    "image": "https://via.placeholder.com/150",
+    "video": "",
+    "title": "Consejos para principiantes en MU Online",
+    "body": [
+      "MU Online puede resultar abrumador para los recién llegados, pero no te preocupes, estamos aquí para guiarte.",
+      "Comienza tu aventura concentrándote en misiones y actividades de bajo nivel para adquirir experiencia.",
+      "Únete a un gremio o clan para recibir apoyo de jugadores más experimentados.",
+      "Experimenta con diferentes clases y descubre cuál se adapta mejor a tu estilo de juego.",
+      "No dudes en preguntar en el chat del juego si tienes dudas; la comunidad está aquí para ayudarte."
+    ],
+    "tags": [
+      "principiantes",
+      "consejos",
+      "mu online",
+      "misiones",
+      "gremio",
+      "clases",
+      "comunidad"
+    ],
+    "category": 0,
+    "featured": false,
+    "related_guides": [3],
+    "comments": [
+      {
+        "id": 1,
+        "body": "Estos consejos fueron muy útiles cuando empecé. ¡Buena guía!",
+        "authorId": 1,
+        "author": "Novato123",
+        "date": "2024-02-03",
+        "likes": 2,
+        "dislikes": 0
+      },
+      {
+        "id": 2,
+        "body": "¡Gran guía para principiantes! Añadiría que también es importante explorar todas las opciones del juego.",
+        "authorId": 2,
+        "author": "Veterano456",
+        "date": "2024-02-03",
+        "likes": 1,
+        "dislikes": 0
+      }
+    ],
+    "status": "active",
+    "likes": 3,
+    "dislikes": 0,
+    "date": "2024-02-01",
+    "authorId": 0,
+    "author": "Kxacez"
+  },
+  {
+    "id": 3,
+    "image": "https://via.placeholder.com/150",
+    "video": "",
+    "title": "Dominando el sistema de habilidades en MU Online",
+    "body": [
+      "Las habilidades son la clave para el éxito en MU Online. Aprende a dominarlas con estos consejos:",
+      "Dedica tiempo a entender las habilidades específicas de tu clase.",
+      "Combina habilidades para crear combos poderosos y derrotar a tus enemigos más rápido.",
+      "Invierte puntos de habilidad sabiamente; prioriza aquellas que se alineen con tu estilo de juego.",
+      "Explora diferentes combinaciones de habilidades para adaptarte a diversas situaciones de combate."
+    ],
+    "tags": [
+      "habilidades",
+      "mu online",
+      "dominar",
+      "combos",
+      "puntos de habilidad",
+      "clases"
+    ],
+    "category": 1,
+    "featured": false,
+    "related_guides": [2],
+    "comments": [
+      {
+        "id": 3,
+        "body": "Me costó entender las habilidades al principio, ¡pero esta guía me ayudó muchísimo!",
+        "authorId": 3,
+        "author": "AprendizMagico",
+        "date": "2024-02-04",
+        "likes": 1,
+        "dislikes": 0
+      }
+    ],
+    "status": "active",
+    "likes": 1,
+    "dislikes": 0,
+    "date": "2024-02-02",
+    "authorId": 0,
+    "author": "Kxacez"
+  },
+  {
+    "id": 4,
+    "image": "https://via.placeholder.com/150",
+    "video": "",
+    "title": "Guía de estrategias para el Coliseo",
+    "body": [
+      "El Coliseo es un lugar donde los guerreros demuestran su valía. Prepárate con estas estrategias:",
+      "Conoce las fortalezas y debilidades de tu clase para adaptar tu estrategia.",
+      "Colabora con tu equipo; la coordinación es esencial para la victoria.",
+      "Utiliza el entorno a tu favor; obstáculos y trampas pueden cambiar el curso de la batalla.",
+      "No subestimes la importancia de la comunicación; un equipo bien comunicado tiene más posibilidades de ganar."
+    ],
+    "tags": [
+      "coliseo",
+      "estrategias",
+      "guerra",
+      "coordinacion",
+      "comunicacion",
+      "clases"
+    ],
+    "category": 1,
+    "featured": false,
+    "related_guides": [],
+    "comments": [],
+    "status": "active",
+    "likes": 0,
+    "dislikes": 0,
+    "date": "2024-02-03",
+    "authorId": 0,
+    "author": "Kxacez"
+  },
+  {
+    "id": 5,
+    "image": "https://via.placeholder.com/150",
+    "video": "",
+    "title": "Descubre los secretos de los Artículos del Set",
+    "body": [
+      "Los Artículos del Set son piezas clave para potenciar a tu personaje. Aquí tienes algunos secretos:",
+      "Completa sets para desbloquear bonificaciones especiales; la sinergia entre las piezas es crucial.",
+      "Persigue sets que se adapten a tu estilo de juego y a las necesidades de tu clase.",
+      "Mejora los artículos del set utilizando materiales específicos para aumentar sus estadísticas.",
+      "Infórmate sobre los sets más poderosos del juego; la meta puede cambiar con las actualizaciones."
+    ],
+    "tags": [
+      "set",
+      "articulos",
+      "potenciar",
+      "bonificaciones",
+      "mejora",
+      "estadisticas"
+    ],
+    "category": 2,
+    "featured": false,
+    "related_guides": [6],
+    "comments": [
+      {
+        "id": 4,
+        "body": "¡No sabía lo importante que eran los sets hasta que leí esta guía! Muy informativa.",
+        "authorId": 4,
+        "author": "SetManiaco",
+        "date": "2024-02-05",
+        "likes": 0,
+        "dislikes": 0
+      }
+    ],
+    "status": "active",
+    "likes": 0,
+    "dislikes": 0,
+    "date": "2024-02-04",
+    "authorId": 0,
+    "author": "Kxacez"
+  },
+  {
+    "id": 6,
+    "image": "https://via.placeholder.com/150",
+    "video": "",
+    "title": "Cómo maximizar tus ganancias en eventos",
+    "body": [
+      "Los eventos en MU Online ofrecen oportunidades únicas para ganar recursos. Sigue estos consejos:",
+      "Participa activamente en eventos; algunos ofrecen recompensas exclusivas.",
+      "Planifica tu tiempo para aprovechar al máximo los eventos temporales.",
+      "Únete a eventos grupales para mejorar la coordinación y obtener mejores recompensas.",
+      "Mantente informado sobre el calendario de eventos; algunos pueden ser sorpresa, ¡no te los pierdas!"
+    ],
+    "tags": [
+      "eventos",
+      "ganancias",
+      "recompensas",
+      "coordinacion",
+      "calendario",
+      "sorpresa"
+    ],
+    "category": 2,
+    "featured": false,
+    "related_guides": [5],
+    "comments": [],
+    "status": "active",
+    "likes": 0,
+    "dislikes": 0,
+    "date": "2024-02-05",
+    "authorId": 0,
+    "author": "Kxacez"
+  },
+  {
+    "id": 7,
+    "image": "https://via.placeholder.com/150",
+    "video": "",
+    "title": "Guía de creación de Alas Evolucionadas",
+    "body": [
+      "Las Alas Evolucionadas son un símbolo de poder en MU Online. Aquí te explicamos cómo crearlas:",
+      "Recolecta los materiales necesarios, que suelen incluir plumas, joyas y artículos especiales.",
+      "Encuentra al NPC especializado en la creación de alas; suele ubicarse en Devias o Lorencia.",
+      "Sigue las instrucciones cuidadosamente y realiza la combinación en el momento adecuado.",
+      "Mejora tus alas evolucionadas con la experiencia; ¡pueden convertirse en tu mejor activo!"
+    ],
+    "tags": [
+      "alas",
+      "evolucionadas",
+      "creacion",
+      "materiales",
+      "npc",
+      "instrucciones",
+      "experiencia"
+    ],
+    "category": 3,
+    "featured": false,
+    "related_guides": [8],
+    "comments": [
+      {
+        "id": 5,
+        "body": "¡Mis alas evolucionadas son mi tesoro! Esta guía fue esencial para conseguirlas.",
+        "authorId": 5,
+        "author": "AldenAlas",
+        "date": "2024-02-06",
+        "likes": 0,
+        "dislikes": 0
+      }
+    ],
+    "status": "active",
+    "likes": 0,
+    "dislikes": 0,
+    "date": "2024-02-06",
+    "authorId": 0,
+    "author": "Kxacez"
+  },
+  {
+    "id": 8,
+    "image": "https://via.placeholder.com/150",
+    "video": "",
+    "title": "Cómo mejorar tus Alas Evolucionadas",
+    "body": [
+      "Una vez que tienes tus Alas Evolucionadas, es hora de mejorarlas. Sigue estos consejos:",
+      "Utiliza artículos especiales de mejora para aumentar las estadísticas de tus alas.",
+      "Participa en eventos que ofrezcan mejoras temporales para tus alas.",
+      "Considera la posibilidad de combinar alas para obtener versiones más poderosas.",
+      "Consulta a otros jugadores con alas evolucionadas mejoradas para obtener consejos personalizados."
+    ],
+    "tags": [
+      "alas",
+      "evolucionadas",
+      "mejorar",
+      "estadisticas",
+      "eventos",
+      "combinar",
+      "consejos"
+    ],
+    "category": 3,
+    "featured": false,
+    "related_guides": [7],
+    "comments": [],
+    "status": "active",
+    "likes": 0,
+    "dislikes": 0,
+    "date": "2024-02-07",
+    "authorId": 0,
+    "author": "Kxacez"
+  },
+  {
+    "id": 9,
+    "image": "https://via.placeholder.com/150",
+    "video": "",
+    "title": "Construyendo tu propio set de joyas",
+    "body": [
+      "Las joyas son esenciales para potenciar tu equipo. Aprende a construir tu set de joyas personalizado:",
+      "Identifica las joyas que mejor se adapten a tu clase y estilo de juego.",
+      "Participa en eventos y misiones que ofrezcan joyas como recompensa.",
+      "Mejora tus joyas utilizando materiales específicos para aumentar sus efectos.",
+      "Experimenta con diferentes combinaciones de joyas para encontrar la que maximice tus estadísticas."
+    ],
+    "tags": [
+      "joyas",
+      "set",
+      "construir",
+      "potenciar",
+      "eventos",
+      "mejora",
+      "estadisticas"
+    ],
+    "category": 4,
+    "featured": false,
+    "related_guides": [11],
+    "comments": [
+      {
+        "id": 6,
+        "body": "Mis joyas son mi mayor tesoro. ¡Gracias por esta guía!",
+        "authorId": 6,
+        "author": "JoyaFanatica",
+        "date": "2024-02-08",
+        "likes": 0,
+        "dislikes": 0
+      }
+    ],
+    "status": "active",
+    "likes": 0,
+    "dislikes": 0,
+    "date": "2024-02-08",
+    "authorId": 0,
+    "author": "Kxacez"
+  },
+  {
+    "id": 10,
+    "image": "https://via.placeholder.com/150",
+    "video": "",
+    "title": "Guía avanzada de comercio en MU Online",
+    "body": [
+      "El comercio es una parte crucial de la economía de MU Online. Domina estas estrategias avanzadas:",
+      "Investiga el mercado y familiarízate con los precios de los artículos más demandados.",
+      "Utiliza personajes secundarios para expandir tu capacidad de almacenamiento y facilitar el comercio.",
+      "Negocia con otros jugadores de manera justa y ética; la reputación es importante.",
+      "Mantente al tanto de las actualizaciones del juego, ya que pueden afectar la economía y las oportunidades de comercio."
+    ],
+    "tags": [
+      "comercio",
+      "avanzado",
+      "economia",
+      "estrategias",
+      "personajes secundarios",
+      "negociacion",
+      "actualizaciones"
+    ],
+    "category": 4,
+    "featured": false,
+    "related_guides": [12],
+    "comments": [
+      {
+        "id": 7,
+        "body": "¡Este comerciante novato agradece estos consejos avanzados! ¡Gran guía!",
+        "authorId": 7,
+        "author": "MercaderCurioso",
+        "date": "2024-02-09",
+        "likes": 0,
+        "dislikes": 0
+      }
+    ],
+    "status": "active",
+    "likes": 0,
+    "dislikes": 0,
+    "date": "2024-02-09",
+    "authorId": 0,
+    "author": "Kxacez"
+  },
+  {
+    "id": 11,
+    "image": "https://via.placeholder.com/150",
+    "video": "",
+    "title": "El arte de la forja: Creando y mejorando tus armas",
+    "body": [
+      "La forja es un aspecto esencial del progreso en MU Online. Aprende los secretos de la creación y mejora de armas:",
+      "Recolecta materiales de forja, como minerales y esencias, a través de misiones y eventos.",
+      "Encuentra al herrero especializado en forja, generalmente ubicado en Lorencia o Devias.",
+      "Experimenta con diferentes combinaciones de materiales para crear armas únicas.",
+      "Mejora tus armas con piedras y encantamientos para potenciar tus habilidades en el campo de batalla."
+    ],
+    "tags": [
+      "forja",
+      "creacion",
+      "mejora",
+      "armas",
+      "materiales",
+      "herrero",
+      "encantamientos"
+    ],
+    "category": 5,
+    "featured": false,
+    "related_guides": [14],
+    "comments": [],
+    "status": "active",
+    "likes": 0,
+    "dislikes": 0,
+    "date": "2024-02-10",
+    "authorId": 0,
+    "author": "Kxacez"
+  },
+  {
+    "id": 12,
+    "image": "https://via.placeholder.com/150",
+    "video": "",
+    "title": "Navegando por los Laberintos del Caos",
+    "body": [
+      "Los Laberintos del Caos son desafíos épicos que solo los guerreros más valientes pueden superar. Prepárate con estos consejos:",
+      "Forma un grupo equilibrado con roles de tanque, daño y soporte para abordar los desafíos.",
+      "Comunica claramente las estrategias y coordina los ataques para superar obstáculos.",
+      "Conoce las debilidades de los jefes y adapta tu equipo y estrategia en consecuencia.",
+      "Recuerda que la paciencia y la perseverancia son clave para superar los Laberintos del Caos."
+    ],
+    "tags": [
+      "laberintos del caos",
+      "desafios",
+      "grupo",
+      "estrategias",
+      "jefes",
+      "perseverancia"
+    ],
+    "category": 5,
+    "featured": false,
+    "related_guides": [13],
+    "comments": [
+      {
+        "id": 8,
+        "body": "¡Mis amigos y yo conquistamos los Laberintos gracias a estos consejos! ¡Gracias!",
+        "authorId": 8,
+        "author": "AventureroIntrépido",
+        "date": "2024-02-11",
+        "likes": 0,
+        "dislikes": 0
+      }
+    ],
+    "status": "active",
+    "likes": 0,
+    "dislikes": 0,
+    "date": "2024-02-11",
+    "authorId": 0,
+    "author": "Kxacez"
+  },
+  {
+    "id": 13,
+    "image": "https://via.placeholder.com/150",
+    "video": "",
+    "title": "Cómo dominar el PvP en MU Online",
+    "body": [
+      "El PvP es una parte emocionante de MU Online. Mejora tus habilidades y estrategias con estos consejos:",
+      "Conoce tu clase y las habilidades de tus oponentes para anticipar sus movimientos.",
+      "Practica regularmente en duelos amistosos para perfeccionar tus habilidades de combate.",
+      "Experimenta con diferentes configuraciones de equipo y tácticas para encontrar tu estilo único.",
+      "No temas pedir consejo a jugadores más experimentados; la comunidad suele ser solidaria con los guerreros en desarrollo."
+    ],
+    "tags": [
+      "PvP",
+      "dominar",
+      "habilidades",
+      "estrategias",
+      "duelos amistosos",
+      "configuraciones",
+      "comunidad"
+    ],
+    "category": 6,
+    "featured": false,
+    "related_guides": [12],
+    "comments": [],
+    "status": "active",
+    "likes": 0,
+    "dislikes": 0,
+    "date": "2024-02-12",
+    "authorId": 0,
+    "author": "Kxacez"
+  },
+  {
+    "id": 14,
+    "image": "https://via.placeholder.com/150",
+    "video": "",
+    "title": "Secretos de la Maestría de Clase en MU Online",
+    "body": [
+      "La Maestría de Clase es fundamental para desbloquear el verdadero potencial de tu personaje. Descubre sus secretos:",
+      "Completa misiones específicas de maestría para mejorar tus habilidades básicas.",
+      "Investiga las bonificaciones de maestría para saber qué aspectos de tu clase se potenciarán.",
+      "Consulta a jugadores experimentados para obtener consejos sobre la mejor ruta de maestría para tu estilo de juego.",
+      "Recuerda que la Maestría de Clase es una parte crucial de tu progreso, ¡no la subestimes!"
+    ],
+    "tags": [
+      "maestria de clase",
+      "secretos",
+      "misiones",
+      "habilidades",
+      "bonificaciones",
+      "consejos"
+    ],
+    "category": 6,
+    "featured": false,
+    "related_guides": [15],
+    "comments": [],
+    "status": "active",
+    "likes": 0,
+    "dislikes": 0,
+    "date": "2024-02-13",
+    "authorId": 0,
+    "author": "Kxacez"
+  },
+  {
+    "id": 15,
+    "image": "https://via.placeholder.com/150",
+    "video": "",
+    "title": "El arte de la negociación en el Mercado",
+    "body": [
+      "El Mercado es un lugar donde las fortunas se hacen y se deshacen. Aprende el arte de la negociación con estos consejos:",
+      "Investiga los precios actuales de los artículos para establecer precios justos y competitivos.",
+      "Mantén tus ofertas claras y concisas; los compradores aprecian la transparencia.",
+      "Considera la posibilidad de ofrecer paquetes y descuentos para atraer a más clientes.",
+      "Sé paciente y persistente; construir una reputación en el Mercado lleva tiempo."
+    ],
+    "tags": [
+      "negociacion",
+      "mercado",
+      "precios",
+      "ofertas",
+      "paquetes",
+      "reputacion"
+    ],
+    "category": 0,
+    "featured": false,
+    "related_guides": [16],
+    "comments": [],
+    "status": "active",
+    "likes": 0,
+    "dislikes": 0,
+    "date": "2024-02-14",
+    "authorId": 0,
+    "author": "Kxacez"
+  },
+  {
+    "id": 16,
+    "image": "https://via.placeholder.com/150",
+    "video": "",
+    "title": "Desafíos diarios para el guerrero moderno",
+    "body": [
+      "Los desafíos diarios ofrecen recompensas sustanciales. Afronta estos desafíos como un guerrero moderno:",
+      "Planifica tu día para incluir tiempo para completar los desafíos diarios.",
+      "Prioriza los desafíos que ofrecen recompensas que se alinean con tus objetivos de juego.",
+      "Colabora con otros jugadores para completar desafíos grupales de manera más eficiente.",
+      "No subestimes el valor de las recompensas diarias; con el tiempo, pueden marcar la diferencia en tu progreso."
+    ],
+    "tags": [
+      "desafios diarios",
+      "recompensas",
+      "planificacion",
+      "colaboracion",
+      "progreso"
+    ],
+    "category": 1,
+    "featured": false,
+    "related_guides": [17],
+    "comments": [],
+    "status": "active",
+    "likes": 0,
+    "dislikes": 0,
+    "date": "2024-02-15",
+    "authorId": 0,
+    "author": "Kxacez"
+  },
+  {
+    "id": 17,
+    "image": "https://via.placeholder.com/150",
+    "video": "",
+    "title": "El camino hacia la gloria: Participando en eventos PvP",
+    "body": [
+      "Los eventos PvP son la arena donde los guerreros demuestran su valía. Prepárate para la gloria con estos consejos:",
+      "Afila tus habilidades PvP participando en duelos regulares y eventos amistosos.",
+      "Experimenta con diferentes configuraciones de equipo para adaptarte a los desafíos específicos de cada evento.",
+      "Colabora con tu equipo y desarrolla estrategias coordinadas para dominar en los eventos de grupo.",
+      "No temas enfrentarte a los mejores; cada derrota es una oportunidad de aprendizaje y mejora."
+    ],
+    "tags": [
+      "eventos PvP",
+      "gloria",
+      "duelos",
+      "configuraciones de equipo",
+      "coordinacion",
+      "aprendizaje"
+    ],
+    "category": 1,
+    "featured": false,
+    "related_guides": [18],
+    "comments": [],
+    "status": "active",
+    "likes": 0,
+    "dislikes": 0,
+    "date": "2024-02-16",
+    "authorId": 0,
+    "author": "Kxacez"
+  },
+  {
+    "id": 18,
+    "image": "https://via.placeholder.com/150",
+    "video": "",
+    "title": "Aventurándote en los Mapas Exclusivos",
+    "body": [
+      "Los Mapas Exclusivos son tesoros ocultos llenos de desafíos y recompensas. Prepárate para la aventura con estos consejos:",
+      "Reúne un grupo fuerte y equilibrado para enfrentar los desafíos de los Mapas Exclusivos.",
+      "Investiga las criaturas y jefes únicos que encontrarás en cada mapa para planificar estrategias efectivas.",
+      "Aprovecha al máximo las recompensas exclusivas, como equipos raros y valiosos.",
+      "Mantente alerta; los Mapas Exclusivos pueden cambiar dinámicamente, presentando nuevos desafíos en cada visita."
+    ],
+    "tags": [
+      "mapas exclusivos",
+      "aventura",
+      "grupo",
+      "estrategias",
+      "recompensas",
+      "cambios dinamicos"
+    ],
+    "category": 2,
+    "featured": false,
+    "related_guides": [19],
+    "comments": [],
+    "status": "active",
+    "likes": 0,
+    "dislikes": 0,
+    "date": "2024-02-17",
+    "authorId": 0,
+    "author": "Kxacez"
+  },
+  {
+    "id": 19,
+    "image": "https://via.placeholder.com/150",
+    "video": "",
+    "title": "Dominando el Arte de la Pesca",
+    "body": [
+      "La pesca en MU Online ofrece una pausa relajante de la batalla. Domina este arte con nuestros consejos:",
+      "Obtén una caña de pescar y cebo de alta calidad para mejorar tus posibilidades de capturar peces raros.",
+      "Explora diferentes ubicaciones de pesca para descubrir las especies únicas que cada lugar ofrece.",
+      "La paciencia es clave; espera el momento adecuado para atrapar peces más valiosos.",
+      "Intercambia tus capturas con otros jugadores para obtener recursos útiles en tu viaje."
+    ],
+    "tags": [
+      "pesca",
+      "arte",
+      "caña de pescar",
+      "cebo",
+      "ubicaciones",
+      "pacencia",
+      "intercambio"
+    ],
+    "category": 2,
+    "featured": false,
+    "related_guides": [20],
+    "comments": [],
+    "status": "active",
+    "likes": 0,
+    "dislikes": 0,
+    "date": "2024-02-18",
+    "authorId": 0,
+    "author": "Kxacez"
+  },
+  {
+    "id": 20,
+    "image": "https://via.placeholder.com/150",
+    "video": "",
+    "title": "Guía de Supervivencia en Eventos de Invasión",
+    "body": [
+      "Los eventos de invasión son caóticos, pero con preparación, puedes sobrevivir y prosperar. Sigue estos consejos:",
+      "Fortalece tu equipo antes del evento; la coordinación es clave para resistir las oleadas de enemigos.",
+      "Utiliza consumibles estratégicamente para mantener tu salud y energía durante los momentos más intensos.",
+      "Comunica claramente con tu equipo sobre objetivos y prioridades durante el evento.",
+      "Recoge los despojos de la batalla y utilízalos sabiamente para mejorar tu equipo y habilidades."
+    ],
+    "tags": [
+      "supervivencia",
+      "eventos de invasion",
+      "coordinacion",
+      "consumibles",
+      "comunicacion",
+      "despojos"
+    ],
+    "category": 3,
+    "featured": false,
+    "related_guides": [21],
+    "comments": [],
+    "status": "active",
+    "likes": 0,
+    "dislikes": 0,
+    "date": "2024-02-19",
+    "authorId": 0,
+    "author": "Kxacez"
+  },
+  {
+    "id": 21,
+    "image": "https://via.placeholder.com/150",
+    "video": "",
+    "title": "Estrategias para Conquistar Castillo de Siege",
+    "body": [
+      "El Castillo de Siege es el pináculo del conflicto entre gremios. Prepara tu estrategia con estos consejos:",
+      "Recluta un equipo diverso con roles bien definidos, desde defensores hasta asaltantes.",
+      "Establece una cadena de mando clara para facilitar la toma de decisiones durante el asedio.",
+      "Utiliza el terreno a tu favor; conocer el mapa del Castillo de Siege es crucial para el éxito.",
+      "Mantente informado sobre las tácticas utilizadas por otros gremios exitosos y adáptalas a tu estrategia."
+    ],
+    "tags": [
+      "estrategias",
+      "castillo de siege",
+      "gremios",
+      "roles",
+      "cadena de mando",
+      "terreno",
+      "tacticas"
+    ],
+    "category": 3,
+    "featured": false,
+    "related_guides": [22],
+    "comments": [],
+    "status": "active",
+    "likes": 0,
+    "dislikes": 0,
+    "date": "2024-02-20",
+    "authorId": 0,
+    "author": "Kxacez"
+  },
+  {
+    "id": 22,
+    "image": "https://via.placeholder.com/150",
+    "video": "",
+    "title": "Desafiando al Guardián del Refugio",
+    "body": [
+      "El Guardián del Refugio es un desafío formidable, pero con la estrategia correcta, puedes vencerlo. Sigue estos consejos:",
+      "Recluta un grupo poderoso con roles de tanque, daño y soporte para enfrentar al Guardián.",
+      "Estudia los patrones de ataque del Guardián y coordina esfuerzos para esquivar ataques devastadores.",
+      "Utiliza consumibles y habilidades defensivas sabiamente para mantener a tu equipo con vida.",
+      "Celebra la victoria y comparte la gloria con tu grupo; derrotar al Guardián es una hazaña que merece reconocimiento."
+    ],
+    "tags": [
+      "guardian del refugio",
+      "desafio",
+      "grupo",
+      "estrategia",
+      "patrones de ataque",
+      "consumibles",
+      "victoria"
+    ],
+    "category": 4,
+    "featured": false,
+    "related_guides": [23],
+    "comments": [],
+    "status": "active",
+    "likes": 0,
+    "dislikes": 0,
+    "date": "2024-02-21",
+    "authorId": 0,
+    "author": "Kxacez"
+  },
+  {
+    "id": 23,
+    "image": "https://via.placeholder.com/150",
+    "video": "",
+    "title": "La Ruta hacia el Éxito: Consejos para Subir de Nivel Rápido",
+    "body": [
+      "Subir de nivel rápidamente es esencial para destacar en MU Online. Sigue esta ruta hacia el éxito:",
+      "Concéntrate en misiones y actividades que ofrezcan la mejor experiencia por tu tiempo.",
+      "Únete a grupos para realizar cacerías en equipo; la experiencia compartida acelera el proceso de nivelación.",
+      "Utiliza objetos de experiencia y bonificaciones de eventos para potenciar tu progreso.",
+      "Establece metas de nivel a corto plazo y celebra tus logros; el proceso de nivelación también es una aventura digna de reconocimiento."
+    ],
+    "tags": [
+      "subir de nivel",
+      "experiencia",
+      "grupos",
+      "objetos de experiencia",
+      "eventos",
+      "metas de nivel"
+    ],
+    "category": 4,
+    "featured": false,
+    "related_guides": [24],
+    "comments": [],
+    "status": "active",
+    "likes": 0,
+    "dislikes": 0,
+    "date": "2024-02-22",
+    "authorId": 0,
+    "author": "Kxacez"
+  },
+  {
+    "id": 24,
+    "image": "https://via.placeholder.com/150",
+    "video": "",
+    "title": "Cómo construir y defender tu gremio",
+    "body": [
+      "El gremio es una parte fundamental de la experiencia de MU Online. Construye y defiende tu legado gremial con estos consejos:",
+      "Recluta miembros activos y comprometidos que compartan tus objetivos y valores.",
+      "Participa en eventos de gremios para fortalecer los lazos y obtener recompensas exclusivas.",
+      "Establece roles claros dentro del gremio para una gestión eficiente.",
+      "Prepara estrategias de defensa del gremio y coordina con otros gremios aliados para enfrentar desafíos mayores.",
+      "Fomenta un ambiente positivo y colaborativo dentro del gremio; la comunidad es la clave del éxito gremial."
+    ],
+    "tags": [
+      "gremio",
+      "construir",
+      "defender",
+      "reclutar",
+      "eventos",
+      "roles",
+      "estrategias",
+      "comunidad"
+    ],
+    "category": 5,
+    "featured": false,
+    "related_guides": [25],
+    "comments": [],
+    "status": "active",
+    "likes": 0,
+    "dislikes": 0,
+    "date": "2024-02-23",
+    "authorId": 0,
+    "author": "Kxacez"
+  },
+  {
+    "id": 25,
+    "image": "https://via.placeholder.com/150",
+    "video": "",
+    "title": "Misterios del Sistema de Clanes",
+    "body": [
+      "El Sistema de Clanes agrega una capa adicional de juego en MU Online. Descubre sus misterios con esta guía:",
+      "Crea o únete a un clan con jugadores que compartan tus intereses y metas en el juego.",
+      "Participa en actividades de clanes, como invasiones y eventos exclusivos.",
+      "Contribuye al desarrollo del clan con tus logros individuales y participación en eventos.",
+      "Aprovecha las bonificaciones y recompensas exclusivas que ofrece el Sistema de Clanes.",
+      "Fomenta la camaradería y la cooperación dentro del clan; juntos, pueden alcanzar nuevos niveles de éxito en MU Online."
+    ],
+    "tags": [
+      "sistema de clanes",
+      "misterios",
+      "crear",
+      "unirse",
+      "actividades",
+      "contribuir",
+      "bonificaciones",
+      "camaraderia",
+      "cooperacion"
+    ],
+    "category": 5,
+    "featured": false,
+    "related_guides": [],
+    "comments": [],
+    "status": "active",
+    "likes": 0,
+    "dislikes": 0,
+    "date": "2024-02-24",
+    "authorId": 0,
+    "author": "Kxacez"
+  },
+  {
+    "id": 26,
+    "image": "https://via.placeholder.com/150",
+    "video": "",
+    "title": "Cómo convertirse en un Maestro del Muay Thai",
+    "body": [
+      "El Muay Thai es una forma de arte marcial en MU Online. Conviértete en un maestro con estos consejos:",
+      "Encuentra al Maestro del Muay Thai en Lorencia y acepta su desafío.",
+      "Completa las misiones y entrenamientos del Maestro para mejorar tus habilidades marciales.",
+      "Desbloquea y domina las técnicas avanzadas del Muay Thai para destacar en el combate.",
+      "Participa en duelos y eventos PvP para poner a prueba tus habilidades de Muay Thai contra otros jugadores.",
+      "Conviértete en una leyenda del Muay Thai en MU Online."
+    ],
+    "tags": [
+      "muay thai",
+      "maestro",
+      "desafio",
+      "misiones",
+      "entrenamiento",
+      "tecnicas avanzadas",
+      "duelos",
+      "leyenda"
+    ],
+    "category": 6,
+    "featured": false,
+    "related_guides": [],
+    "comments": [],
+    "status": "active",
+    "likes": 0,
+    "dislikes": 0,
+    "date": "2024-02-25",
+    "authorId": 0,
+    "author": "Kxacez"
+  }
+]

@@ -1,6 +1,7 @@
 public class User
 {
     // TODO: public string CharacterName { get; set; } = "";
+    public int id { get; set; }
     public string Key { get; internal set; } = "";
     public UserTypes UserType { get; internal set; }
 

@@ -2,3 +2,8 @@
 bin
 bin2
 session.dat
+
+.VSCodeCounter
+obj/
+obj/project.nuget.cache
+obj/*

@@ -76,4 +76,36 @@ public static class ApiManager
             return false;
         }
     }
+
+    public static bool PopulateGuidesToDatabase(List<Guide> guides)
+    {
+        try
+        {
+            var response = client.Set("guides", guides);
+            return true;
+        }
+        catch (System.Exception)
+        {
+            return false;
+        }
+    }
+    public static List<Guide> GetGuidesFromDB()
+    {
+        try
+        {
+            var response = client.Get("guides");
+            if (response.Body != "null")
+            {
+                return response.ResultAs<List<Guide>>();
+            }
+            else
+            {
+                return new();
+            }
+        }
+        catch (System.Exception)
+        {
+            return new();
+        }
+    }
 }

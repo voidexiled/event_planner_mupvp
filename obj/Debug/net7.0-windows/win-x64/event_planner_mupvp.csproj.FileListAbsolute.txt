@@ -256,3 +256,4 @@ C:\Users\jalom\Desktop\NPM Projects\CS\event_planner_mupvp\bin\Debug\net7.0-wind
 C:\Users\jalom\Desktop\NPM Projects\CS\event_planner_mupvp\bin\Debug\net7.0-windows\win-x64\System.Net.Http.Extensions.dll
 C:\Users\jalom\Desktop\NPM Projects\CS\event_planner_mupvp\bin\Debug\net7.0-windows\win-x64\System.Net.Http.Primitives.dll
 C:\Users\jalom\Desktop\NPM Projects\CS\event_planner_mupvp\bin\Debug\net7.0-windows\win-x64\SixLabors.Fonts.dll
+C:\Users\jalom\Desktop\NPM Projects\CS\event_planner_mupvp\bin\Debug\net7.0-windows\win-x64\data\Sets.txt

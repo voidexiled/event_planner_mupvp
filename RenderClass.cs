@@ -5,11 +5,23 @@ using System.Runtime.InteropServices;
 using System.Windows;
 using Veldrid;
 using SixLabors.Fonts;
-namespace IMGUITEST
+using Newtonsoft.Json;
+using System.Runtime.CompilerServices;
+using System.Text;
+using System.Globalization;
+using System.Net;
+using System.ComponentModel;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.PixelFormats;
+
+namespace MUPVPUI
 {
     public class RenderClass : Overlay
     {
-
+        // static string guidesJson = System.IO.File.ReadAllText("guides.json"); // obtener las guias
+        // List<Guide> guides = JsonConvert.DeserializeObject<List<Guide>>(guidesJson);
+        Guide selectedGuide = null;
+        string searchInputGuides = "";
         ImGuiStylePtr oldStyle = ImGui.GetStyle();
         ImGuiStylePtr style = ImGui.GetStyle();
 
@@ -64,12 +76,19 @@ namespace IMGUITEST
 
         // Obtiene el ancho y alto de la pantalla
         static readonly int screenWidth = GetSystemMetrics(SM_CXSCREEN);
-        static readonly int screenHeight = GetSystemMetrics(SM_CYSCREEN);
+        static readonly int screenHeight = GetSystemMetrics(SM_CYSCREEN) - 50;
 
 
         bool showItemListWindow = false;
         bool showRewardListWindow = false;
         bool showSetListWindow = false;
+        bool showGuidesWindow = false;
+
+        bool showSelectedGuideWindow = false;
+
+
+        Vector2 centerOfScreenView = new(screenWidth * 0.5f, screenHeight * 0.5f);
+        Vector2 previousGuideWindowPosition = Vector2.Zero;
         private double time = 0.0;
         private double speed = 3.0;
 
@@ -106,14 +125,14 @@ namespace IMGUITEST
             }
             if (isOpenUserAdministrationWindow)
             {
-                ImGui.Begin("Administracion de usuarios", ImGuiWindowFlags.AlwaysAutoResize);
+                ImGui.Begin("Administracion de usuarios", ref isOpenUserAdministrationWindow, ImGuiWindowFlags.AlwaysAutoResize);
                 if (ImGui.Button("Agregar nuevo usuario", new Vector2(240, 25)))
                 {
                     isOpenNewUserWindow = !isOpenNewUserWindow;
                 }
                 if (isOpenNewUserWindow)
                 {
-                    ImGui.Begin("Agregar nuevo usuario", ImGuiWindowFlags.AlwaysAutoResize);
+                    ImGui.Begin("Agregar nuevo usuario", ref isOpenNewUserWindow, ImGuiWindowFlags.AlwaysAutoResize);
                     ImGui.Text("Llave de licencia:");
                     ImGui.InputText("", ref keyUserInput, 50, ImGuiInputTextFlags.ReadOnly);
                     ImGui.SameLine();
@@ -316,7 +335,7 @@ namespace IMGUITEST
 
             {
 
-                ImGui.Begin("Lista de recompensas", ImGuiWindowFlags.AlwaysAutoResize);
+                ImGui.Begin("Lista de recompensas", ref showRewardListWindow, ImGuiWindowFlags.AlwaysAutoResize);
 
                 Vector4 oldTextColor = style.Colors[(int)ImGuiCol.Text];
                 if (selectedItem.Name != "")
@@ -544,7 +563,7 @@ namespace IMGUITEST
             if (showSetListWindow)
             {
                 filteredSets = FilterAndSortSets(setNameFilterString, classFilters, typeFilter);
-                ImGui.Begin("Lista de sets");
+                ImGui.Begin("Lista de sets", ref showSetListWindow, ImGuiWindowFlags.AlwaysAutoResize);
 
                 ImGui.InputText("Filtrar por nombre", ref setNameFilterString, 40);
                 const int checkboxesPerRow = 4; // Puedes ajustar esto según tus necesidades
@@ -597,22 +616,211 @@ namespace IMGUITEST
 
             }
         }
-
+        bool showAdminGuidesWindow = false;
         private void RenderizeTutorTools()
         {
             ImGui.SeparatorText("Opciones de Tutor");
             if (ImGui.Button("Administracion de guias", new Vector2(240, 25)))
             {
+                showAdminGuidesWindow = !showAdminGuidesWindow;
+            }
+            if (showAdminGuidesWindow)
+            {
+                if (ImGui.Button("Popular guias"))
+                {
+                    ApiManager.PopulateGuidesToDatabase(guides);
+                }
             }
             ImGui.Spacing();
         }
 
+        List<Guide> filteredGuides = new();
+
+        private List<Guide> FilterGuides()
+        {
+            if (searchInputGuides == "")
+            {
+                return guides.OrderByDescending(guide => guide.IsFeatured).ToList();
+            }
+            else
+            {
+                string searchTerm = RemoveDiacritics(searchInputGuides.ToLowerInvariant()); // Quitar acentos y convertir a minúsculas
+
+                return guides
+                    .OrderByDescending(guide =>
+                        (RemoveDiacritics(guide.Title.ToLowerInvariant()).Contains(searchTerm) ? 1 : 0) +
+                        guide.Tags.Count(tag => RemoveDiacritics(tag.ToLowerInvariant()).Contains(searchTerm)) +
+                        (RemoveDiacritics(guide.Author.ToLowerInvariant()).Contains(searchTerm) ? 1 : 0))
+                    .ToList();
+            }
+        }
+
+        // private int GetGuidePoints(Guide guide)
+        // {
+        //     int points = 0;
+        //     string inputSearch = RemoveDiacritics(searchInputGuides).ToLower();
+        //     Console.WriteLine(inputSearch);
+        //     List<string> title = RemoveDiacritics(guide.Title).Split(" ").ToList();
+        //     string author = RemoveDiacritics(guide.Author);
+        //     List<string> tags = guide.Tags;
+
+        //     foreach (string tag in tags)
+        //     {
+        //         if (RemoveDiacritics(tag).ToLower().Contains(inputSearch))
+        //         {
+        //             points += 10;
+        //         }
+        //     }
+
+        //     foreach (string word in title)
+        //     {
+        //         if (inputSearch.Contains(word))
+        //         {
+        //             points += 5;
+        //         }
+        //     }
+
+        //     if (inputSearch.Contains(author))
+        //     {
+        //         points += 15;
+        //     }
+
+
+        //     return points;
+        // }
+        public static string RemoveDiacritics(string text)
+        {
+            string normalized = text.Normalize(System.Text.NormalizationForm.FormD);
+            var sb = new StringBuilder();
+            foreach (char c in from c in normalized
+                               let u = CharUnicodeInfo.GetUnicodeCategory(c)
+                               where u != UnicodeCategory.NonSpacingMark
+                               select c)
+            {
+                sb.Append(c);
+            }
+            return sb.ToString().Normalize(NormalizationForm.FormC);
+        }
+
         private void RenderizeUserTools()
         {
+
             ImGui.SeparatorText("Opciones de usuario");
             if (ImGui.Button("Abrir guias", new Vector2(240, 25)))
             {
+                showGuidesWindow = !showGuidesWindow;
+            }
+            if (showGuidesWindow)
+            {
 
+                ImGui.Begin("Guías", ref showGuidesWindow, ImGuiWindowFlags.AlwaysAutoResize);
+                ImGui.Text("Buscar ");
+                ImGui.SameLine();
+                ImGui.InputTextWithHint("##SearchInputGuides", "Buscar guía", ref searchInputGuides, 100);
+                ImGui.BeginChild("Guías", new Vector2(340, 140), ImGuiChildFlags.Border | ImGuiChildFlags.FrameStyle);
+                filteredGuides = FilterGuides();
+                foreach (var guide in filteredGuides)
+                {
+                    Vector4 prevColor = ImGui.GetStyle().Colors[(int)ImGuiCol.Text];
+                    if (guide.IsFeatured)
+                    {
+                        Vector4 _color = ColorManager.FromRGBA(excRedColor, excGreenColor, excBlueColor, 1f);
+                        ImGui.GetStyle().Colors[(int)ImGuiCol.Text] = _color;
+                    }
+                    if (ImGui.Selectable($"{guide.Title} - {guide.Author}"))
+                    {
+
+                        int guideId = guide.Id;
+                        if (selectedGuide == null)
+                        {
+                            selectedGuide = guide;
+                            showSelectedGuideWindow = true;
+                        }
+                        else
+                        {
+                            if (selectedGuide.Id == guideId)
+                            {
+                                showSelectedGuideWindow = false;
+                            }
+                            else
+                            {
+                                selectedGuide = guide;
+                                showSelectedGuideWindow = true;
+                            }
+                        }
+                        // if (selectedGuide != null)
+                        // {
+                        //     if (selectedGuide.Id == guideId)
+                        //     {
+                        //         showSelectedGuideWindow = false;
+                        //         selectedGuide = null;
+                        //     }
+                        // }
+                        // else
+                        // {
+
+                        //     selectedGuide = guide;
+                        //     showSelectedGuideWindow = true;
+
+                        // }
+                        Console.WriteLine($"Seleccionaste la guía {guide.Title}");
+
+                    }
+                    if (guide.IsFeatured)
+                    {
+                        ImGui.GetStyle().Colors[(int)ImGuiCol.Text] = prevColor;
+                    }
+                }
+
+                ImGui.EndChild();
+                ImGui.End();
+            }
+
+            if (showSelectedGuideWindow)
+            {
+                if (selectedGuide != null)
+                {
+                    if (previousGuideWindowPosition == Vector2.Zero)
+                    {
+
+                        ImGui.SetNextWindowPos(centerOfScreenView, ImGuiCond.Appearing, new Vector2(0.5f, 0.5f));
+                    }
+                    else
+                    {
+                        ImGui.SetNextWindowPos(previousGuideWindowPosition, ImGuiCond.Appearing, new Vector2(0.5f, 0.5f));
+                    }
+                    Vector4 prevColor = ImGui.GetStyle().Colors[(int)ImGuiCol.Text];
+                    if (selectedGuide.IsFeatured)
+                    {
+                        Vector4 _color = ColorManager.FromRGBA(excRedColor, excGreenColor, excBlueColor, 1f);
+                        ImGui.GetStyle().Colors[(int)ImGuiCol.Text] = _color;
+                    }
+                    ImGui.SetNextWindowSize(new Vector2(400, 600), ImGuiCond.Appearing);
+                    ImGui.Begin($"{selectedGuide.Title} - {selectedGuide.Author}", ref showSelectedGuideWindow, ImGuiWindowFlags.AlwaysVerticalScrollbar | ImGuiWindowFlags.NoResize);
+
+                    if (selectedGuide.IsFeatured)
+                    {
+                        ImGui.GetStyle().Colors[(int)ImGuiCol.Text] = prevColor;
+                    }
+
+                    // Render image 
+                    if (selectedGuide.Image != "")
+                    {
+                        byte[] imgBytes;
+                        imageBytes.TryGetValue(selectedGuide.Id, out imgBytes);
+                        Image<Rgba32> img = Image.Load<Rgba32>(imgBytes);
+                        AddOrGetImagePointer($"{selectedGuide.Id}_guide_img", img, true, out imageHandle);
+                        ImGui.Image(imageHandle, new Vector2(400, 280));
+                    }
+                    ImGui.Spacing();
+                    foreach (var paragraph in selectedGuide.Body)
+                    {
+                        ImGui.TextWrapped(paragraph);
+                        // ImGui.TextWrapped("HOLA\nComo estas");
+                    }
+                    ImGui.End();
+
+                }
             }
             ImGui.Spacing();
         }
@@ -646,6 +854,7 @@ namespace IMGUITEST
             if (this.Size.Width != screenWidth || this.Size.Height != screenHeight)
             {
                 this.Size = new(screenWidth, screenHeight);
+                this.Position = new(0, 0);
             }
         }
 
@@ -681,94 +890,126 @@ namespace IMGUITEST
         }
 
 
+        public static void SetupImGuiStyle()
+        {
+            // Moonlight styleMadam-Herta from ImThemes
+            var style = ImGuiNET.ImGui.GetStyle();
 
-        /* private void ShowDebugWindow()
-        
-        // {
-        //     ImGui.Begin("Debug");
-        //     if (ImGui.BeginTabBar("Debug", ImGuiTabBarFlags.Reorderable))
-        //     {
-        //         if (ImGui.BeginTabItem("Informacion"))
-        //         {
-        //             ImGui.Text($"Screen Width: {screenWidth}");
-        //             ImGui.Text($"Screen Height: {screenHeight}");
-        //             ImGui.Text($"Overlay Width: {this.Size.Width}");
-        //             ImGui.Text($"Overlay Height: {this.Size.Height}");
-        //             ImGui.Text($"Overlay Enabled: {enabled_overlay}");
-        //             ImGui.Text($"Session Key: {SessionManager.currentUser.Key}");
-        //             ImGui.Text($"Session User Type: {SessionManager.currentUser.UserType}");
-        //             ImGui.Text($"Session Logged In: {SessionManager.loggedIn}");
-        //             ImGui.Text($"Session Error Message: {SessionManager.errorMessage}");
-        //             ImGui.Text($"Session User Rank: {SessionManager.currentUser.GetRankAsString()}");
-        //             ImGui.Text($"Session User Color: {GetUserColor(SessionManager.currentUser)}");
-        //             ImGui.Text($"Session User Is Owner: {SessionManager.UserIsOwner()}");
-        //             ImGui.Text($"Session User Is Administrator: {SessionManager.UserIsAdministrator()}");
-        //             ImGui.Text($"Session User Is Community Manager: {SessionManager.UserIsCommunityManager()}");
-        //             ImGui.Text($"Session User Is Game Manager: {SessionManager.UserIsGameManager()}");
-        //             ImGui.Text($"Session User Is Tutor: {SessionManager.UserIsTutor()}");
-        //             ImGui.Text($"Session User Is Premium Gold: {SessionManager.UserIsPremiumGold()}");
-        //             ImGui.Text($"Session User Is Premium Silver: {SessionManager.UserIsPremiumSilver()}");
-        //             ImGui.Text($"Session User Is Premium Bronze: {SessionManager.UserIsPremiumBronze()}");
-        //             ImGui.Text($"Session User Is Vip: {SessionManager.UserIsVip()}");
-        //             ImGui.Text($"Session User Is User: {SessionManager.UserIsUser()}");
-        //             ImGui.EndTabItem();
-        //         }
+            style.Alpha = 1.0f;
+            style.DisabledAlpha = 1.0f;
+            style.WindowPadding = new Vector2(12.0f, 12.0f);
+            style.WindowRounding = 11.5f;
+            style.WindowBorderSize = 0.0f;
+            style.WindowMinSize = new Vector2(20.0f, 20.0f);
+            style.WindowTitleAlign = new Vector2(0.5f, 0.5f);
+            style.WindowMenuButtonPosition = ImGuiDir.Right;
+            style.ChildRounding = 0.0f;
+            style.ChildBorderSize = 1.0f;
+            style.PopupRounding = 0.0f;
+            style.PopupBorderSize = 1.0f;
+            style.FramePadding = new Vector2(20.0f, 3.400000095367432f);
+            style.FrameRounding = 11.89999961853027f;
+            style.FrameBorderSize = 0.0f;
+            style.ItemSpacing = new Vector2(4.300000190734863f, 5.5f);
+            style.ItemInnerSpacing = new Vector2(7.099999904632568f, 1.799999952316284f);
+            style.CellPadding = new Vector2(12.10000038146973f, 9.199999809265137f);
+            style.IndentSpacing = 0.0f;
+            style.ColumnsMinSpacing = 4.900000095367432f;
+            style.ScrollbarSize = 11.60000038146973f;
+            style.ScrollbarRounding = 15.89999961853027f;
+            style.GrabMinSize = 3.700000047683716f;
+            style.GrabRounding = 20.0f;
+            style.TabRounding = 0.0f;
+            style.TabBorderSize = 0.0f;
+            style.TabMinWidthForCloseButton = 0.0f;
+            style.ColorButtonPosition = ImGuiDir.Right;
+            style.ButtonTextAlign = new Vector2(0.5f, 0.5f);
+            style.SelectableTextAlign = new Vector2(0.0f, 0.0f);
 
-        //         if (ImGui.BeginTabItem("Interactivo"))
-        //         {
-        //             if (ImGui.Button("Owner"))
-        //             {
-        //                 SessionManager.currentUser.UserType = UserTypes.CREADOR;
-        //             }
+            style.Colors[(int)ImGuiCol.Text] = new Vector4(1.0f, 1.0f, 1.0f, 1.0f);
+            style.Colors[(int)ImGuiCol.TextDisabled] = new Vector4(0.2745098173618317f, 0.3176470696926117f, 0.4509803950786591f, 1.0f);
+            style.Colors[(int)ImGuiCol.WindowBg] = new Vector4(0.0784313753247261f, 0.08627451211214066f, 0.1019607856869698f, 1.0f);
+            style.Colors[(int)ImGuiCol.ChildBg] = new Vector4(0.09411764889955521f, 0.1019607856869698f, 0.1176470592617989f, 1.0f);
+            style.Colors[(int)ImGuiCol.PopupBg] = new Vector4(0.0784313753247261f, 0.08627451211214066f, 0.1019607856869698f, 1.0f);
+            style.Colors[(int)ImGuiCol.Border] = new Vector4(0.1568627506494522f, 0.168627455830574f, 0.1921568661928177f, 1.0f);
+            style.Colors[(int)ImGuiCol.BorderShadow] = new Vector4(0.0784313753247261f, 0.08627451211214066f, 0.1019607856869698f, 1.0f);
+            style.Colors[(int)ImGuiCol.FrameBg] = new Vector4(0.1137254908680916f, 0.125490203499794f, 0.1529411822557449f, 1.0f);
+            style.Colors[(int)ImGuiCol.FrameBgHovered] = new Vector4(0.1568627506494522f, 0.168627455830574f, 0.1921568661928177f, 1.0f);
+            style.Colors[(int)ImGuiCol.FrameBgActive] = new Vector4(0.1568627506494522f, 0.168627455830574f, 0.1921568661928177f, 1.0f);
+            style.Colors[(int)ImGuiCol.TitleBg] = new Vector4(0.0470588244497776f, 0.05490196123719215f, 0.07058823853731155f, 1.0f);
+            style.Colors[(int)ImGuiCol.TitleBgActive] = new Vector4(0.0470588244497776f, 0.05490196123719215f, 0.07058823853731155f, 1.0f);
+            style.Colors[(int)ImGuiCol.TitleBgCollapsed] = new Vector4(0.0784313753247261f, 0.08627451211214066f, 0.1019607856869698f, 1.0f);
+            style.Colors[(int)ImGuiCol.MenuBarBg] = new Vector4(0.09803921729326248f, 0.105882354080677f, 0.1215686276555061f, 1.0f);
+            style.Colors[(int)ImGuiCol.ScrollbarBg] = new Vector4(0.0470588244497776f, 0.05490196123719215f, 0.07058823853731155f, 1.0f);
+            style.Colors[(int)ImGuiCol.ScrollbarGrab] = new Vector4(0.1176470592617989f, 0.1333333402872086f, 0.1490196138620377f, 1.0f);
+            style.Colors[(int)ImGuiCol.ScrollbarGrabHovered] = new Vector4(0.1568627506494522f, 0.168627455830574f, 0.1921568661928177f, 1.0f);
+            style.Colors[(int)ImGuiCol.ScrollbarGrabActive] = new Vector4(0.1176470592617989f, 0.1333333402872086f, 0.1490196138620377f, 1.0f);
+            style.Colors[(int)ImGuiCol.CheckMark] = new Vector4(0.9725490212440491f, 1.0f, 0.4980392158031464f, 1.0f);
+            style.Colors[(int)ImGuiCol.SliderGrab] = new Vector4(0.9725490212440491f, 1.0f, 0.4980392158031464f, 1.0f);
+            style.Colors[(int)ImGuiCol.SliderGrabActive] = new Vector4(1.0f, 0.7960784435272217f, 0.4980392158031464f, 1.0f);
+            style.Colors[(int)ImGuiCol.Button] = new Vector4(0.1176470592617989f, 0.1333333402872086f, 0.1490196138620377f, 1.0f);
+            style.Colors[(int)ImGuiCol.ButtonHovered] = new Vector4(0.1803921610116959f, 0.1882352977991104f, 0.196078434586525f, 1.0f);
+            style.Colors[(int)ImGuiCol.ButtonActive] = new Vector4(0.1529411822557449f, 0.1529411822557449f, 0.1529411822557449f, 1.0f);
+            style.Colors[(int)ImGuiCol.Header] = new Vector4(0.1411764770746231f, 0.1647058874368668f, 0.2078431397676468f, 1.0f);
+            style.Colors[(int)ImGuiCol.HeaderHovered] = new Vector4(0.105882354080677f, 0.105882354080677f, 0.105882354080677f, 1.0f);
+            style.Colors[(int)ImGuiCol.HeaderActive] = new Vector4(0.0784313753247261f, 0.08627451211214066f, 0.1019607856869698f, 1.0f);
+            style.Colors[(int)ImGuiCol.Separator] = new Vector4(0.1294117718935013f, 0.1490196138620377f, 0.1921568661928177f, 1.0f);
+            style.Colors[(int)ImGuiCol.SeparatorHovered] = new Vector4(0.1568627506494522f, 0.1843137294054031f, 0.250980406999588f, 1.0f);
+            style.Colors[(int)ImGuiCol.SeparatorActive] = new Vector4(0.1568627506494522f, 0.1843137294054031f, 0.250980406999588f, 1.0f);
+            style.Colors[(int)ImGuiCol.ResizeGrip] = new Vector4(0.1450980454683304f, 0.1450980454683304f, 0.1450980454683304f, 1.0f);
+            style.Colors[(int)ImGuiCol.ResizeGripHovered] = new Vector4(0.9725490212440491f, 1.0f, 0.4980392158031464f, 1.0f);
+            style.Colors[(int)ImGuiCol.ResizeGripActive] = new Vector4(1.0f, 1.0f, 1.0f, 1.0f);
+            style.Colors[(int)ImGuiCol.Tab] = new Vector4(0.0784313753247261f, 0.08627451211214066f, 0.1019607856869698f, 1.0f);
+            style.Colors[(int)ImGuiCol.TabHovered] = new Vector4(0.1176470592617989f, 0.1333333402872086f, 0.1490196138620377f, 1.0f);
+            style.Colors[(int)ImGuiCol.TabActive] = new Vector4(0.1176470592617989f, 0.1333333402872086f, 0.1490196138620377f, 1.0f);
+            style.Colors[(int)ImGuiCol.TabUnfocused] = new Vector4(0.0784313753247261f, 0.08627451211214066f, 0.1019607856869698f, 1.0f);
+            style.Colors[(int)ImGuiCol.TabUnfocusedActive] = new Vector4(0.125490203499794f, 0.2745098173618317f, 0.572549045085907f, 1.0f);
+            style.Colors[(int)ImGuiCol.PlotLines] = new Vector4(0.5215686559677124f, 0.6000000238418579f, 0.7019608020782471f, 1.0f);
+            style.Colors[(int)ImGuiCol.PlotLinesHovered] = new Vector4(0.03921568766236305f, 0.9803921580314636f, 0.9803921580314636f, 1.0f);
+            style.Colors[(int)ImGuiCol.PlotHistogram] = new Vector4(0.8823529481887817f, 0.7960784435272217f, 0.5607843399047852f, 1.0f);
+            style.Colors[(int)ImGuiCol.PlotHistogramHovered] = new Vector4(0.95686274766922f, 0.95686274766922f, 0.95686274766922f, 1.0f);
+            style.Colors[(int)ImGuiCol.TableHeaderBg] = new Vector4(0.0470588244497776f, 0.05490196123719215f, 0.07058823853731155f, 1.0f);
+            style.Colors[(int)ImGuiCol.TableBorderStrong] = new Vector4(0.0470588244497776f, 0.05490196123719215f, 0.07058823853731155f, 1.0f);
+            style.Colors[(int)ImGuiCol.TableBorderLight] = new Vector4(0.0f, 0.0f, 0.0f, 1.0f);
+            style.Colors[(int)ImGuiCol.TableRowBg] = new Vector4(0.1176470592617989f, 0.1333333402872086f, 0.1490196138620377f, 1.0f);
+            style.Colors[(int)ImGuiCol.TableRowBgAlt] = new Vector4(0.09803921729326248f, 0.105882354080677f, 0.1215686276555061f, 1.0f);
+            style.Colors[(int)ImGuiCol.TextSelectedBg] = new Vector4(0.9372549057006836f, 0.9372549057006836f, 0.9372549057006836f, 1.0f);
+            style.Colors[(int)ImGuiCol.DragDropTarget] = new Vector4(0.4980392158031464f, 0.5137255191802979f, 1.0f, 1.0f);
+            style.Colors[(int)ImGuiCol.NavHighlight] = new Vector4(0.2666666805744171f, 0.2901960909366608f, 1.0f, 1.0f);
+            style.Colors[(int)ImGuiCol.NavWindowingHighlight] = new Vector4(0.4980392158031464f, 0.5137255191802979f, 1.0f, 1.0f);
+            style.Colors[(int)ImGuiCol.NavWindowingDimBg] = new Vector4(0.196078434586525f, 0.1764705926179886f, 0.5450980663299561f, 0.501960813999176f);
+            style.Colors[(int)ImGuiCol.ModalWindowDimBg] = new Vector4(0.196078434586525f, 0.1764705926179886f, 0.5450980663299561f, 0.501960813999176f);
+        }
+        public List<Guide> guides = new();
+        public RenderClass()
+        {
+            this.ReplaceFont("C:\\Windows\\Fonts\\segoeui.ttf", 18, FontGlyphRangeType.English);
+            guides = ApiManager.GetGuidesFromDB();
+            Console.WriteLine($"Guides count: {guides.ToArray()[0].Image}");
+            LoadImagesFromGuides();
+        }
+        private Dictionary<int, byte[]> imageBytes = new();
+        private IntPtr imageHandle;
+        private uint imageWidth;
+        private uint imageHeight;
+        private void LoadImagesFromGuides()
+        {
 
-        //             if (ImGui.Button("Admin"))
-        //             {
-        //                 SessionManager.currentUser.UserType = UserTypes.ADMINISTRADOR;
-        //             }
+            using var webClient = new HttpClient();
+            foreach (var guide in guides)
+            {
+                byte[] image = webClient.GetAsync(guide.Image).Result.Content.ReadAsByteArrayAsync().Result;
+                imageBytes.Add(guide.Id, image);
+                // Image img = Image.Load(image);
 
-        //             if (ImGui.Button("CM"))
-        //             {
-        //                 SessionManager.currentUser.UserType = UserTypes.COMMUNITYMANAGER;
-        //             }
+            }
+            Console.WriteLine($"Imagenes cargadas {imageBytes.Count}");
+            webClient.Dispose();
 
-        //             if (ImGui.Button("GM"))
-        //             {
-        //                 SessionManager.currentUser.UserType = UserTypes.GAMEMANAGER;
-        //             }
 
-        //             if (ImGui.Button("Tutor"))
-        //             {
-        //                 SessionManager.currentUser.UserType = UserTypes.TUTOR;
-        //             }
 
-        //             if (ImGui.Button("VIP2"))
-        //             {
-        //                 SessionManager.currentUser.UserType = UserTypes.VIP2;
-        //             }
 
-        //             if (ImGui.Button("VIP1"))
-        //             {
-        //                 SessionManager.currentUser.UserType = UserTypes.VIP1;
-        //             }
-
-        //             if (ImGui.Button("VIP0"))
-        //             {
-        //                 SessionManager.currentUser.UserType = UserTypes.VIP0;
-        //             }
-
-        //             if (ImGui.Button("User"))
-        //             {
-        //                 SessionManager.currentUser.UserType = UserTypes.USUARIO;
-        //             }
-        //             ImGui.EndTabItem();
-        //         }
-
-        //         ImGui.EndTabBar();
-        //     }
-
-        //     ImGui.End();
-        // }*/
-
+        }
 
         protected override void Render()
         {
@@ -776,9 +1017,19 @@ namespace IMGUITEST
             UpdateColor(); // Este metodo hace funcionar el color arcoiris que uso en los textos
             ConfigureHotkeys(); // Configuro los hotkeys que tendra la interfaz como Ocultar / Mostrar la interfaz
             ConfigureOverlaySize(); // Obtengo el tamaño de la pantalla y resizeo el overlay
-            //ImGui.ShowDemoWindow();
+                                    //ImGui.ShowDemoWindow();
+            SetupImGuiStyle();
+
+
+            // ImGui.ShowFontSelector("Font Selector");
 
             ImGui.Begin("Ocultar ventanas", ImGuiWindowFlags.NoDocking);
+
+            // foreach (KeyValuePair<int, byte[]> image in imageBytes)
+            // {
+            //     Image<Rgba32> img = Image.Load<Rgba32>(image.Value);
+            //     AddOrGetImagePointer($"{image.Key}_guide_img", img, true, out imageHandle);
+            // }
 
             if (ImGui.Button($"{(enabled_overlay ? "Ocultar" : "Mostrar")}", new Vector2(240, 25)))
             {
@@ -835,7 +1086,7 @@ namespace IMGUITEST
                     ImGuiWindowFlags.AlwaysAutoResize);
 
             float oldSize = ImGui.GetFont().Scale;
-            ImGui.GetFont().Scale = 0.8f;
+            ImGui.GetFont().Scale = 0.95f;
             ImGui.PushFont(ImGui.GetFont());
             ImGui.Text("Desarrollado por Void Exiled (GM Kxacez)");
             ImGui.Text("Versión BETA 0.1");

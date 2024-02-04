@@ -1,0 +1,53 @@
+*id* - es un numero autoincremental, debe ir de 0 en adelante, no se debe
+repetir el id y no importa el orden, la guía con id 0 no tiene mas importancia
+que la guía con id 100 ni viceversa .
+
+*title* - Titulo de la guía, se mostrara al principio de la guía.
+
+*body* - Sera el texto de la guía ( el cuerpo ), texto principal de ella. se
+compone de esta manera. empieza por corchetes "[" y termina con el de cierre
+"]". cada "" debe ir separada por comas ( , ) Y cada "" representa una linea
+diferente. es decir ["Hola como estas", "Bienvenido!"] se veria de esta manera:
+
+--- EJEMPLO Hola como estas Bienvenido! --- EJEMPLO
+
+y este ["Hola como estas, Bienvenido!"], se veria de esta manera: --- EJEMPLO
+Hola como estas, Bienvenido! --- EJEMPLO
+
+*image* - ES OPCIONAL, pero si quieres mostar una imagen al principio de la
+guia, por debajo del titulo, aqui va el URL de la imagen (tiene que estar en
+algun lugar de internet) y tiene que ser accesible por ese link, ejemplo:
+https://i.imgur.com/CUgYgy7.jpeg
+
+*video* - ES OPCIONAL, pero si quieres mostrar un link de un video de youtube,
+pones un enlace al video. este link solo aparecera al final de la guia, hasta
+abajo.
+
+*tags* - Estas tags serviran para la barra de busqueda de guias, en donde por
+ejemplo si un usuario busca "COMO ENCONTRAR A MARLON". y un post tiene estas
+tags: "tags": ["evolucion","npc","ubicacion","marlon", "etc", "encontrar",
+"donde"], el sistema de busqueda va a separar las palabras de la busqueda "COMO
+ENCONTRAR A MARLON" y buscara cuantas ocurrencias encuentra en las guias
+existentes y las que tengan mas encontradas, se mostraran primero. "COMO
+ENCONTRAR A MARLON" coincide 3 veces con esos tags es decir "3 puntos de
+busqueda",
+
+Debes separar los tags por comillas y comas y deberán ir entre []
+
+*featured* - aqui vas a definir con "true" si quieres que la guia sea destacada.
+y con "false" las que seran guias normales. La ventana de Guias ordenara las
+guias de forma que las guias destacadas estaran siempre al inicio de la lista.
+despues de las guias destacadas se mostraran las guias normales.
+
+*category* - Aqui va a ir el ID de la categoria ( de las que estan en el archivo
+GuidesCategories.cs ) Esta categoria servirá para ordenar las guias como el
+usuario quiera. Es decir si el ID de categoria 0 es "CATEGORY*BASIC*INFO" y el
+usuario selecciona esa categoria, le apareceran las guias que tengan ese ID en
+*category*
+
+*related*guides* - Aqui ira una lista de guias que esten relacionadas con la
+actual. se compone de esta manera: Esta envuelto en [] y deben separarse por ","
+de esta manera: [12, 42]
+
+Con esta propiedad indicaremos qué guías estan relacionadas con esta. Los
+numeros hacen referencias a el *id* de la guía
