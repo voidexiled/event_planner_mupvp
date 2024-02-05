@@ -216,15 +216,6 @@ C:\Users\jalom\Desktop\NPM Projects\CS\event_planner_mupvp\obj\Debug\net7.0-wind
 C:\Users\jalom\Desktop\NPM Projects\CS\event_planner_mupvp\obj\Debug\net7.0-windows\win-x64\event_planner_mupvp.csproj.CoreCompileInputs.cache
 C:\Users\jalom\Desktop\NPM Projects\CS\event_planner_mupvp\obj\Debug\net7.0-windows\win-x64\event_planner_mupvp.csproj.CopyComplete
 C:\Users\jalom\Desktop\NPM Projects\CS\event_planner_mupvp\obj\Debug\net7.0-windows\win-x64\event_planner_mupvp.genruntimeconfig.cache
-C:\Users\jalom\Desktop\NPM Projects\CS\event_planner_mupvp\bin\Debug\net7.0-windows\win-x64\MUPVP STAFF TOOL.exe
-C:\Users\jalom\Desktop\NPM Projects\CS\event_planner_mupvp\bin\Debug\net7.0-windows\win-x64\MUPVP STAFF TOOL.deps.json
-C:\Users\jalom\Desktop\NPM Projects\CS\event_planner_mupvp\bin\Debug\net7.0-windows\win-x64\MUPVP STAFF TOOL.runtimeconfig.json
-C:\Users\jalom\Desktop\NPM Projects\CS\event_planner_mupvp\bin\Debug\net7.0-windows\win-x64\MUPVP STAFF TOOL.dll
-C:\Users\jalom\Desktop\NPM Projects\CS\event_planner_mupvp\bin\Debug\net7.0-windows\win-x64\MUPVP STAFF TOOL.pdb
-C:\Users\jalom\Desktop\NPM Projects\CS\event_planner_mupvp\obj\Debug\net7.0-windows\win-x64\MUPVP STAFF TOOL.dll
-C:\Users\jalom\Desktop\NPM Projects\CS\event_planner_mupvp\obj\Debug\net7.0-windows\win-x64\refint\MUPVP STAFF TOOL.dll
-C:\Users\jalom\Desktop\NPM Projects\CS\event_planner_mupvp\obj\Debug\net7.0-windows\win-x64\MUPVP STAFF TOOL.pdb
-C:\Users\jalom\Desktop\NPM Projects\CS\event_planner_mupvp\obj\Debug\net7.0-windows\win-x64\ref\MUPVP STAFF TOOL.dll
 C:\Users\jalom\Desktop\NPM Projects\CS\event_planner_mupvp\bin\Debug\net7.0-windows\win-x64\data\Armors.txt
 C:\Users\jalom\Desktop\NPM Projects\CS\event_planner_mupvp\bin\Debug\net7.0-windows\win-x64\data\Axes.txt
 C:\Users\jalom\Desktop\NPM Projects\CS\event_planner_mupvp\bin\Debug\net7.0-windows\win-x64\data\Boots.txt
@@ -257,3 +248,12 @@ C:\Users\jalom\Desktop\NPM Projects\CS\event_planner_mupvp\bin\Debug\net7.0-wind
 C:\Users\jalom\Desktop\NPM Projects\CS\event_planner_mupvp\bin\Debug\net7.0-windows\win-x64\System.Net.Http.Primitives.dll
 C:\Users\jalom\Desktop\NPM Projects\CS\event_planner_mupvp\bin\Debug\net7.0-windows\win-x64\SixLabors.Fonts.dll
 C:\Users\jalom\Desktop\NPM Projects\CS\event_planner_mupvp\bin\Debug\net7.0-windows\win-x64\data\Sets.txt
+C:\Users\jalom\Desktop\NPM Projects\cs\event_planner_mupvp\bin\Debug\net7.0-windows\win-x64\MuPvpTool.exe
+C:\Users\jalom\Desktop\NPM Projects\cs\event_planner_mupvp\bin\Debug\net7.0-windows\win-x64\MuPvpTool.deps.json
+C:\Users\jalom\Desktop\NPM Projects\cs\event_planner_mupvp\bin\Debug\net7.0-windows\win-x64\MuPvpTool.runtimeconfig.json
+C:\Users\jalom\Desktop\NPM Projects\cs\event_planner_mupvp\bin\Debug\net7.0-windows\win-x64\MuPvpTool.dll
+C:\Users\jalom\Desktop\NPM Projects\cs\event_planner_mupvp\bin\Debug\net7.0-windows\win-x64\MuPvpTool.pdb
+C:\Users\jalom\Desktop\NPM Projects\cs\event_planner_mupvp\obj\Debug\net7.0-windows\win-x64\MuPvpTool.dll
+C:\Users\jalom\Desktop\NPM Projects\cs\event_planner_mupvp\obj\Debug\net7.0-windows\win-x64\refint\MuPvpTool.dll
+C:\Users\jalom\Desktop\NPM Projects\cs\event_planner_mupvp\obj\Debug\net7.0-windows\win-x64\MuPvpTool.pdb
+C:\Users\jalom\Desktop\NPM Projects\cs\event_planner_mupvp\obj\Debug\net7.0-windows\win-x64\ref\MuPvpTool.dll

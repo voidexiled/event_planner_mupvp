@@ -9,7 +9,7 @@
     <PublishSingleFile>true</PublishSingleFile>
     <SelfContained>true</SelfContained>
     <RuntimeIdentifier>win-x64</RuntimeIdentifier>
-    <AssemblyName>MUPVP STAFF TOOL</AssemblyName>
+    <AssemblyName>MuPvpTool</AssemblyName>
     <Version>1.0.0</Version>
     <Description>Aplicacion oficial para el STAFF de MU PVP ONLINE</Description>
     <Company>Kxacez</Company>

@@ -12968,7 +12968,7 @@
     "version": "1.0.0",
     "restore": {
       "projectUniqueName": "C:\\Users\\jalom\\Desktop\\NPM Projects\\cs\\event_planner_mupvp\\event_planner_mupvp.csproj",
-      "projectName": "MUPVP STAFF TOOL",
+      "projectName": "MuPvpTool",
       "projectPath": "C:\\Users\\jalom\\Desktop\\NPM Projects\\cs\\event_planner_mupvp\\event_planner_mupvp.csproj",
       "packagesPath": "C:\\Users\\jalom\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\jalom\\Desktop\\NPM Projects\\cs\\event_planner_mupvp\\obj\\",

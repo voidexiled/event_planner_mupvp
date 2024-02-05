@@ -108,4 +108,18 @@ public static class ApiManager
             return new();
         }
     }
+
+    public static bool UpdateGuide(Guide guide)
+    {
+        try
+        {
+            var response = client.Set("guides/" + guide.Id, guide);
+            return true;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+            return false;
+        }
+    }
 }

@@ -20,6 +20,7 @@ namespace MUPVPUI
 
         public static bool WINDOW_ADMIN_GUIDES = false;
         public static bool WINDOW_SELECTED_ADMIN_GUIDE = false;
+        public static bool WINDOW_RELATED_GUIDES = false;
 
         public static void CloseAllWindows()
         {
@@ -31,6 +32,7 @@ namespace MUPVPUI
             WINDOW_USER_ADMINISTRATION = false;
             WINDOW_NEW_USER = false;
             WINDOW_ADMIN_GUIDES = false;
+            WINDOW_SELECTED_ADMIN_GUIDE = false;
         }
     }
 }

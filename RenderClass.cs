@@ -8,6 +8,7 @@ using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
 using System.Diagnostics;
 using System.Net;
+using SharpGen.Runtime;
 
 namespace MUPVPUI
 {
@@ -15,7 +16,7 @@ namespace MUPVPUI
     {
         // static string guidesJson = System.IO.File.ReadAllText("guides.json"); // obtener las guias
         // List<Guide> guides = JsonConvert.DeserializeObject<List<Guide>>(guidesJson);
-        readonly string currentVersion = "0.0.0.1";
+        readonly string currentVersion = "0.0.0.3";
         string urlVersion = "";
 
         List<Guide> filteredGuides = new();
@@ -634,7 +635,7 @@ namespace MUPVPUI
                 ImGui.Text("Buscar ");
                 ImGui.SameLine();
                 ImGui.InputTextWithHint("##SearchInputGuides", "Buscar guía", ref searchInputAdminGuides, 100);
-                ImGui.BeginChild("Guías", new Vector2(440, 150), ImGuiChildFlags.Border | ImGuiChildFlags.FrameStyle);
+                ImGui.BeginChild("Administrar Guías", new Vector2(440, 150), ImGuiChildFlags.Border | ImGuiChildFlags.FrameStyle);
 
                 filteredAdminGuides = FilterGuides();
                 foreach (var guide in filteredAdminGuides)
@@ -649,6 +650,25 @@ namespace MUPVPUI
                     {
                         int guideId = guide.Id;
                         selectedAdminGuide = guide;
+                        selectedGuideTitle = guide.Title;
+                        selectedGuideAuthor = guide.Author;
+                        selectedGuideImage = guide.Image;
+                        selectedGuideVideo = guide.Video;
+                        selectedGuideBody = string.Join("\n", guide.Body);
+                        selectedGuideTags = string.Join(",", guide.Tags);
+                        selectedGuideRelatedGuides = string.Join(",", guide.RelatedGuides);
+                        selectedGuideIsFeatured = guide.IsFeatured;
+                        reallySelectedRelatedGuides = new();
+                        foreach (var relatedGuideId in guide.RelatedGuides)
+                        {
+                            Console.WriteLine($"Related guide id: {relatedGuideId}");
+                            var relatedGuide = guides.Find(g => g.Id == relatedGuideId);
+                            if (relatedGuide != null)
+                            {
+                                reallySelectedRelatedGuides.Add(relatedGuide);
+                            }
+                        }
+
                         WindowManager.WINDOW_SELECTED_ADMIN_GUIDE = true;
                     }
                     if (guide.IsFeatured)
@@ -675,30 +695,98 @@ namespace MUPVPUI
                         ImGui.GetStyle().Colors[(int)ImGuiCol.Text] = _color;
                     }
                     ImGui.SetNextWindowPos(centerOfScreenView, ImGuiCond.Appearing, new Vector2(0.5f, 0.5f));
-
-                    ImGui.Begin($"{selectedAdminGuide.Title} - {selectedAdminGuide.Author}", ref WindowManager.WINDOW_SELECTED_ADMIN_GUIDE);
+                    var estimatedWidth = ImGui.GetStyle().FramePadding.X * 2 + 400;
+                    ImGui.SetNextWindowSize(new Vector2(estimatedWidth, 500), ImGuiCond.Appearing);
+                    ImGui.Begin($"{selectedAdminGuide.Title} - {selectedAdminGuide.Author}", ref WindowManager.WINDOW_SELECTED_ADMIN_GUIDE, ImGuiWindowFlags.AlwaysVerticalScrollbar);
                     if (selectedAdminGuide.IsFeatured)
                     {
                         ImGui.GetStyle().Colors[(int)ImGuiCol.Text] = prevColor;
                     }
 
                     ImGui.Text("Titulo:");
-                    ImGui.InputText("##Title", ref selectedGuideTitle, 100);
+                    ImGui.InputText("##Title", ref selectedGuideTitle, 100, ImGuiInputTextFlags.AllowTabInput | ImGuiInputTextFlags.CallbackHistory | ImGuiInputTextFlags.CallbackCompletion);
                     ImGui.Text("Autor:");
-                    ImGui.InputText("##Author", ref selectedGuideAuthor, 100);
+                    ImGui.InputText("##Author", ref selectedGuideAuthor, 100, ImGuiInputTextFlags.AllowTabInput | ImGuiInputTextFlags.CallbackHistory | ImGuiInputTextFlags.CallbackCompletion);
                     ImGui.Text("Imagen:");
-                    ImGui.InputText("##Image", ref selectedGuideImage, 100);
+                    ImGui.InputText("##Image", ref selectedGuideImage, 100, ImGuiInputTextFlags.AllowTabInput | ImGuiInputTextFlags.CallbackHistory | ImGuiInputTextFlags.CallbackCompletion);
                     ImGui.Text("Video:");
-                    ImGui.InputText("##Video", ref selectedGuideVideo, 100);
+                    ImGui.InputText("##Video", ref selectedGuideVideo, 100, ImGuiInputTextFlags.AllowTabInput | ImGuiInputTextFlags.CallbackHistory | ImGuiInputTextFlags.CallbackCompletion);
                     ImGui.Text("Cuerpo:");
-                    ImGui.InputTextMultiline("##Body", ref selectedGuideBody, 1000, new Vector2(400, 200));
+                    ImGui.InputTextMultiline("##Body", ref selectedGuideBody, 2000, new Vector2(400, 200), ImGuiInputTextFlags.AllowTabInput | ImGuiInputTextFlags.CallbackHistory | ImGuiInputTextFlags.CallbackCompletion | ImGuiInputTextFlags.CtrlEnterForNewLine);
                     ImGui.Text("Tags:");
-                    ImGui.InputText("##Tags", ref selectedGuideTags, 100);
-                    ImGui.Text("Relacionadas:");
-                    ImGui.InputText("##RelatedGuides", ref selectedGuideRelatedGuides, 100);
-                    ImGui.Checkbox("Destacada", ref selectedGuideIsFeatured);
+                    ImGui.InputText("##Tags", ref selectedGuideTags, 100, ImGuiInputTextFlags.AllowTabInput | ImGuiInputTextFlags.CallbackHistory | ImGuiInputTextFlags.CallbackCompletion);
+                    // ImGui.InputText("##RelatedGuides", ref selectedGuideRelatedGuides, 100, ImGuiInputTextFlags.AllowTabInput | ImGuiInputTextFlags.CallbackHistory | ImGuiInputTextFlags.CallbackCompletion);
+                    if (ImGui.Button("Seleccionar guías relacionadas"))
+                    {
+                        WindowManager.WINDOW_RELATED_GUIDES = !WindowManager.WINDOW_RELATED_GUIDES;
+                    }
+                    if (WindowManager.WINDOW_RELATED_GUIDES)
+                    {
+                        ImGui.SetNextWindowSize(new Vector2(840, 190));
+                        ImGui.Begin("Guias relacionadas", ref WindowManager.WINDOW_RELATED_GUIDES, ImGuiWindowFlags.NoResize);
+                        ImGui.Text("Buscar ");
+                        ImGui.SameLine();
+                        ImGui.InputTextWithHint("##SearchInputRelatedGuides", "Buscar guía", ref searchInputAdminRelatedGuides, 100);
+                        ImGui.BeginChild("Guias", new Vector2(400, 150), ImGuiChildFlags.Border | ImGuiChildFlags.FrameStyle);
+                        ImGui.SeparatorText("Guias disponibles");
+                        selectedRelatedGuides = FilterRelatedGuides();
+                        var filteredSelectedRelatedGuides = selectedRelatedGuides.Where(guide => !reallySelectedRelatedGuides.Contains(guide)).ToList();
+                        foreach (var guide in filteredSelectedRelatedGuides)
+                        {
+                            Vector4 normalTextColor = ImGui.GetStyle().Colors[(int)ImGuiCol.Text];
+                            if (guide.IsFeatured)
+                            {
+                                Vector4 _color = ColorManager.FromRGBA(excRedColor, excGreenColor, excBlueColor, 1f);
+                                ImGui.GetStyle().Colors[(int)ImGuiCol.Text] = _color;
+                            }
+                            if (ImGui.Selectable($"{guide.Id} {guide.Title} - {guide.Author}"))
+                            {
+                                selectedAdminGuide.RelatedGuides.Add(guide.Id);
+                                reallySelectedRelatedGuides.Add(guide);
+                            }
+                            if (guide.IsFeatured)
+                            {
+                                ImGui.GetStyle().Colors[(int)ImGuiCol.Text] = normalTextColor;
+                            }
+                        }
+                        ImGui.EndChild();
+                        ImGui.SameLine();
+                        ImGui.BeginChild("Guias Seleccionadas", new Vector2(400, 150), ImGuiChildFlags.Border | ImGuiChildFlags.FrameStyle);
+                        ImGui.SeparatorText("Guias seleccionadas");
+                        foreach (var guide in reallySelectedRelatedGuides)
+                        {
+                            Vector4 normalTextColor = ImGui.GetStyle().Colors[(int)ImGuiCol.Text];
+                            if (guide.IsFeatured)
+                            {
+                                Vector4 _color = ColorManager.FromRGBA(excRedColor, excGreenColor, excBlueColor, 1f);
+                                ImGui.GetStyle().Colors[(int)ImGuiCol.Text] = _color;
+                            }
+                            if (ImGui.Selectable($"{guide.Id} {guide.Title} - {guide.Author}"))
+                            {
+                                // selectedAdminGuide.RelatedGuides.Add(guide.Id);
+                                // TODO: FIX CRASH WHEN CLICK
+                                reallySelectedRelatedGuides.Remove(guide);
+                            }
+                            if (guide.IsFeatured)
+                            {
+                                ImGui.GetStyle().Colors[(int)ImGuiCol.Text] = normalTextColor;
+                            }
+                        }
+                        ImGui.EndChild();
+                        ImGui.End();
+                    }
                     if (ImGui.Button("Guardar"))
                     {
+                        selectedAdminGuide.Title = selectedGuideTitle;
+                        selectedAdminGuide.Author = selectedGuideAuthor;
+                        selectedAdminGuide.Image = selectedGuideImage;
+                        selectedAdminGuide.Video = selectedGuideVideo;
+                        selectedAdminGuide.Body = selectedGuideBody.Split("\n").As<List<String>>();
+                        selectedAdminGuide.Tags = selectedGuideTags.Split(",").As<List<String>>();
+                        // selectedAdminGuide.RelatedGuides = selectedGuideRelatedGuides.Split(",").Select(int.Parse).ToList();
+                        selectedAdminGuide.IsFeatured = selectedGuideIsFeatured;
+                        selectedAdminGuide.RelatedGuides = reallySelectedRelatedGuides.Select(guide => guide.Id).ToList();
+                        ApiManager.UpdateGuide(selectedAdminGuide);
                         // ApiManager.UpdateGuide(selectedAdminGuide);
                     }
                     ImGui.End();
@@ -708,7 +796,10 @@ namespace MUPVPUI
         }
 
 
-
+        // TODO: MOVE THIS
+        List<Guide> reallySelectedRelatedGuides = new();
+        List<Guide> selectedRelatedGuides = new();
+        string searchInputAdminRelatedGuides = "";
         private List<Guide> FilterGuides()
         {
             if (searchInputGuides == "")
@@ -746,6 +837,29 @@ namespace MUPVPUI
                     .ToList();
             }
         }
+        private List<Guide> FilterRelatedGuides()
+        {
+            if (searchInputAdminRelatedGuides == "")
+            {
+                return guides.OrderByDescending(guide => guide.IsFeatured).ToList();
+            }
+            else
+            {
+                string searchTerm = RemoveDiacritics(searchInputAdminRelatedGuides.ToLowerInvariant());
+
+                return guides
+                    .OrderByDescending(guide =>
+                        (RemoveDiacritics(guide.Title.ToLowerInvariant()).Contains(searchTerm) ? 1 : 0) +
+                        guide.Tags.Count(tag => RemoveDiacritics(tag.ToLowerInvariant()).Contains(searchTerm)) +
+                        (RemoveDiacritics(guide.Author.ToLowerInvariant()).Contains(searchTerm) ? 1 : 0))
+                    .ToList();
+            }
+        }
+
+        private void UpdateGuides()
+        {
+            guides = ApiManager.GetGuidesFromDB();
+        }
 
         private void RenderizeUserTools()
         {
@@ -754,17 +868,18 @@ namespace MUPVPUI
             ImGui.SeparatorText("Opciones de usuario");
             if (ImGui.Button("Abrir guias", new Vector2(240, 25)))
             {
+                UpdateGuides();
                 WindowManager.WINDOW_GUIDES = !WindowManager.WINDOW_GUIDES;
             }
 
             // RENDER LIST GUIDES WINDOW
             if (WindowManager.WINDOW_GUIDES)
             {
-                ImGui.Begin("Guías", ref WindowManager.WINDOW_GUIDES, ImGuiWindowFlags.AlwaysAutoResize);
+                ImGui.Begin("Explorar Guías", ref WindowManager.WINDOW_GUIDES, ImGuiWindowFlags.AlwaysAutoResize);
                 ImGui.Text("Buscar ");
                 ImGui.SameLine();
                 ImGui.InputTextWithHint("##SearchInputGuides", "Buscar guía", ref searchInputGuides, 100);
-                ImGui.BeginChild("Guías", new Vector2(340, 140), ImGuiChildFlags.Border | ImGuiChildFlags.FrameStyle);
+                ImGui.BeginChild("Explorar Guías Box", new Vector2(340, 140), ImGuiChildFlags.Border | ImGuiChildFlags.FrameStyle);
                 filteredGuides = FilterGuides();
                 foreach (var guide in filteredGuides)
                 {
