@@ -1,9 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>exe</OutputType>
-    <OutputTypeEx>exe</OutputTypeEx>
-    <TargetFramework>net7.0</TargetFramework>
+    <OutputType>winexe</OutputType>
+    <OutputTypeEx>winexe</OutputTypeEx>
+    <TargetFramework>net7.0-windows</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <PublishSingleFile>true</PublishSingleFile>
