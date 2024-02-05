@@ -122,4 +122,32 @@ public static class ApiManager
             return false;
         }
     }
+
+    public static bool DeleteGuide(Guide guide)
+    {
+        try
+        {
+            var response = client.Delete("guides/" + guide.Id);
+            return true;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+            return false;
+        }
+    }
+
+    public static bool AddGuide(Guide guide)
+    {
+        try
+        {
+            var response = client.Set("guides/" + guide.Id, guide);
+            return true;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+            return false;
+        }
+    }
 }

@@ -21,6 +21,7 @@ namespace MUPVPUI
         public static bool WINDOW_ADMIN_GUIDES = false;
         public static bool WINDOW_SELECTED_ADMIN_GUIDE = false;
         public static bool WINDOW_RELATED_GUIDES = false;
+        public static bool WINDOW_NEW_GUIDE = false;
 
         public static void CloseAllWindows()
         {
