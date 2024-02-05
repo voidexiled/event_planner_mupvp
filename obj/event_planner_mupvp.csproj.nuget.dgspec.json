@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jalom\\Desktop\\NPM Projects\\CS\\event_planner_mupvp\\event_planner_mupvp.csproj": {}
+    "C:\\Users\\jalom\\Desktop\\NPM Projects\\cs\\event_planner_mupvp\\event_planner_mupvp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jalom\\Desktop\\NPM Projects\\CS\\event_planner_mupvp\\event_planner_mupvp.csproj": {
+    "C:\\Users\\jalom\\Desktop\\NPM Projects\\cs\\event_planner_mupvp\\event_planner_mupvp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jalom\\Desktop\\NPM Projects\\CS\\event_planner_mupvp\\event_planner_mupvp.csproj",
+        "projectUniqueName": "C:\\Users\\jalom\\Desktop\\NPM Projects\\cs\\event_planner_mupvp\\event_planner_mupvp.csproj",
         "projectName": "MUPVP STAFF TOOL",
-        "projectPath": "C:\\Users\\jalom\\Desktop\\NPM Projects\\CS\\event_planner_mupvp\\event_planner_mupvp.csproj",
+        "projectPath": "C:\\Users\\jalom\\Desktop\\NPM Projects\\cs\\event_planner_mupvp\\event_planner_mupvp.csproj",
         "packagesPath": "C:\\Users\\jalom\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jalom\\Desktop\\NPM Projects\\CS\\event_planner_mupvp\\obj\\",
+        "outputPath": "C:\\Users\\jalom\\Desktop\\NPM Projects\\cs\\event_planner_mupvp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

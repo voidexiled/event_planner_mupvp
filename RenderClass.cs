@@ -2,17 +2,12 @@ using ImGuiNET;
 using ClickableTransparentOverlay;
 using System.Numerics;
 using System.Runtime.InteropServices;
-using System.Windows;
-using Veldrid;
-using SixLabors.Fonts;
-using Newtonsoft.Json;
-using System.Runtime.CompilerServices;
 using System.Text;
 using System.Globalization;
-using System.Net;
-using System.ComponentModel;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
+using System.Diagnostics;
+using System.Net;
 
 namespace MUPVPUI
 {
@@ -20,8 +15,17 @@ namespace MUPVPUI
     {
         // static string guidesJson = System.IO.File.ReadAllText("guides.json"); // obtener las guias
         // List<Guide> guides = JsonConvert.DeserializeObject<List<Guide>>(guidesJson);
+        readonly string currentVersion = "0.0.0.1";
+        string urlVersion = "";
+
+        List<Guide> filteredGuides = new();
+        List<Guide> filteredAdminGuides = new();
         Guide selectedGuide = null;
+        Guide selectedAdminGuide = null;
+
+        List<Guide> guidesHistory = new();
         string searchInputGuides = "";
+        string searchInputAdminGuides = "";
         ImGuiStylePtr oldStyle = ImGui.GetStyle();
         ImGuiStylePtr style = ImGui.GetStyle();
 
@@ -78,15 +82,6 @@ namespace MUPVPUI
         static readonly int screenWidth = GetSystemMetrics(SM_CXSCREEN);
         static readonly int screenHeight = GetSystemMetrics(SM_CYSCREEN) - 50;
 
-
-        bool showItemListWindow = false;
-        bool showRewardListWindow = false;
-        bool showSetListWindow = false;
-        bool showGuidesWindow = false;
-
-        bool showSelectedGuideWindow = false;
-
-
         Vector2 centerOfScreenView = new(screenWidth * 0.5f, screenHeight * 0.5f);
         Vector2 previousGuideWindowPosition = Vector2.Zero;
         private double time = 0.0;
@@ -97,8 +92,14 @@ namespace MUPVPUI
         private string keyUserInput = "";
         private string rankUserInput = "";
 
-        private bool isOpenUserAdministrationWindow = false;
-        private bool isOpenNewUserWindow = false;
+        private string selectedGuideTitle = "";
+        private string selectedGuideAuthor = "";
+        private string selectedGuideImage = "";
+        private string selectedGuideVideo = "";
+        private string selectedGuideBody = "";
+        private string selectedGuideTags = "";
+        private string selectedGuideRelatedGuides = "";
+        private bool selectedGuideIsFeatured = false;
 
         private void UpdateColor()
         {
@@ -120,19 +121,19 @@ namespace MUPVPUI
             ImGui.SeparatorText("Opciones de Owner");
             if (ImGui.Button("Administracion de usuarios", new Vector2(240, 25)))
             {
-                isOpenUserAdministrationWindow = !isOpenUserAdministrationWindow;
-
+                // WindowManager.HandleWindow(WindowName.UserAdministration);
+                WindowManager.WINDOW_USER_ADMINISTRATION = !WindowManager.WINDOW_USER_ADMINISTRATION;
             }
-            if (isOpenUserAdministrationWindow)
+            if (WindowManager.WINDOW_USER_ADMINISTRATION)
             {
-                ImGui.Begin("Administracion de usuarios", ref isOpenUserAdministrationWindow, ImGuiWindowFlags.AlwaysAutoResize);
+                ImGui.Begin("Administracion de usuarios", ref WindowManager.WINDOW_USER_ADMINISTRATION, ImGuiWindowFlags.AlwaysAutoResize);
                 if (ImGui.Button("Agregar nuevo usuario", new Vector2(240, 25)))
                 {
-                    isOpenNewUserWindow = !isOpenNewUserWindow;
+                    WindowManager.WINDOW_NEW_USER = !WindowManager.WINDOW_NEW_USER;
                 }
-                if (isOpenNewUserWindow)
+                if (WindowManager.WINDOW_NEW_USER)
                 {
-                    ImGui.Begin("Agregar nuevo usuario", ref isOpenNewUserWindow, ImGuiWindowFlags.AlwaysAutoResize);
+                    ImGui.Begin("Agregar nuevo usuario", ref WindowManager.WINDOW_NEW_USER, ImGuiWindowFlags.AlwaysAutoResize);
                     ImGui.Text("Llave de licencia:");
                     ImGui.InputText("", ref keyUserInput, 50, ImGuiInputTextFlags.ReadOnly);
                     ImGui.SameLine();
@@ -210,30 +211,31 @@ namespace MUPVPUI
 
         private void RenderizeGameManagerTools()
         {
+            // GM BUTTONS 
             ImGui.SeparatorText("Opciones de G.M.");
-            if (ImGui.Button($"{(showItemListWindow ? "Ocultar" : "Abrir")} lista de items", new Vector2(240, 25)))
+            if (ImGui.Button($"{(WindowManager.WINDOW_ITEM_LIST ? "Ocultar" : "Abrir")} lista de items", new Vector2(240, 25)))
             {
-                showItemListWindow = !showItemListWindow;
+                WindowManager.WINDOW_ITEM_LIST = !WindowManager.WINDOW_ITEM_LIST;
             }
             ImGui.Spacing();
-            if (ImGui.Button($"{(showRewardListWindow ? "Ocultar" : "Abrir")} lista de recompensas", new Vector2(240, 25)))
+            if (ImGui.Button($"{(WindowManager.WINDOW_REWARD_LIST ? "Ocultar" : "Abrir")} lista de recompensas", new Vector2(240, 25)))
             {
-                showRewardListWindow = !showRewardListWindow;
+                WindowManager.WINDOW_REWARD_LIST = !WindowManager.WINDOW_REWARD_LIST;
             }
             ImGui.Spacing();
-            if (ImGui.Button($"{(showSetListWindow ? "Ocultar" : "Abrir")} lista de sets", new Vector2(240, 25)))
+            if (ImGui.Button($"{(WindowManager.WINDOW_SET_LIST ? "Ocultar" : "Abrir")} lista de sets", new Vector2(240, 25)))
             {
-                showSetListWindow = !showSetListWindow;
+                WindowManager.WINDOW_SET_LIST = !WindowManager.WINDOW_SET_LIST;
             }
 
 
-            if (showItemListWindow)
+            if (WindowManager.WINDOW_ITEM_LIST)
             {
                 // Filtro y ordenamiento
                 filteredItems = FilterAndSortItems(ItemManager.AllItems, nameFilter, classFilters, typeFilter, groupFilter, sortByTypeAscending);
 
                 ImGui.SetNextWindowSize(new Vector2(340, 420), ImGuiCond.FirstUseEver);
-                ImGui.Begin("Lista de Items", ref showItemListWindow, ImGuiWindowFlags.AlwaysAutoResize);
+                ImGui.Begin("Lista de Items", ref WindowManager.WINDOW_ITEM_LIST, ImGuiWindowFlags.AlwaysAutoResize);
 
                 // Barra de búsqueda por nombre
                 ImGui.InputText("Filtrar por Nombre", ref nameFilter, 100);
@@ -323,7 +325,12 @@ namespace MUPVPUI
                     ImGui.Selectable($"{item.Type} - {item.Name}");
                     if (ImGui.IsItemClicked(ImGuiMouseButton.Left))
                     {
-                        HandleSelectableClick(item);
+                        ProcessedItem newItem = new(item.Group, item.Type, item.Name, item.Slot);
+                        processedItems.Add(newItem);
+                        if (!WindowManager.WINDOW_REWARD_LIST)
+                        {
+                            WindowManager.WINDOW_REWARD_LIST = true;
+                        }
                     }
                 }
                 ImGui.EndChild();
@@ -331,11 +338,9 @@ namespace MUPVPUI
                 ImGui.End();
             }
 
-            if (showRewardListWindow)
-
+            if (WindowManager.WINDOW_REWARD_LIST)
             {
-
-                ImGui.Begin("Lista de recompensas", ref showRewardListWindow, ImGuiWindowFlags.AlwaysAutoResize);
+                ImGui.Begin("Lista de recompensas", ref WindowManager.WINDOW_REWARD_LIST, ImGuiWindowFlags.AlwaysAutoResize);
 
                 Vector4 oldTextColor = style.Colors[(int)ImGuiCol.Text];
                 if (selectedItem.Name != "")
@@ -480,9 +485,7 @@ namespace MUPVPUI
                     {
                         ImGui.SetClipboardText(selectedItem.GetCommand());
                     }
-
                 }
-
 
 
                 ImGui.BeginChild("Objetos:", new Vector2(400, 140), ImGuiChildFlags.Border | ImGuiChildFlags.FrameStyle);
@@ -558,17 +561,17 @@ namespace MUPVPUI
                 ImGui.End();
             }
 
-            // TODO: LOCAL VARIABLES
+            // SET LIST
 
-            if (showSetListWindow)
+            if (WindowManager.WINDOW_SET_LIST)
             {
                 filteredSets = FilterAndSortSets(setNameFilterString, classFilters, typeFilter);
-                ImGui.Begin("Lista de sets", ref showSetListWindow, ImGuiWindowFlags.AlwaysAutoResize);
+                ImGui.Begin("Lista de sets", ref WindowManager.WINDOW_SET_LIST, ImGuiWindowFlags.AlwaysAutoResize);
 
                 ImGui.InputText("Filtrar por nombre", ref setNameFilterString, 40);
-                const int checkboxesPerRow = 4; // Puedes ajustar esto según tus necesidades
+                const int checkboxesPerRow = 4; // Checkbox por fila
                 int checkboxesInRow = 0;
-                // Checkboxes para filtrar por clase
+                // Checkboxes CLASS FILTER
                 ImGui.Text("Filtrar por Clase:");
                 foreach (ClassTypes classType in Enum.GetValues(typeof(ClassTypes)))
                 {
@@ -593,7 +596,7 @@ namespace MUPVPUI
                     }
                     else
                     {
-                        ImGui.SameLine(); // Continuar en la misma línea
+                        ImGui.SameLine();
                     }
                 }
 
@@ -616,25 +619,95 @@ namespace MUPVPUI
 
             }
         }
-        bool showAdminGuidesWindow = false;
+
         private void RenderizeTutorTools()
         {
             ImGui.SeparatorText("Opciones de Tutor");
             if (ImGui.Button("Administracion de guias", new Vector2(240, 25)))
             {
-                showAdminGuidesWindow = !showAdminGuidesWindow;
+                WindowManager.WINDOW_ADMIN_GUIDES = !WindowManager.WINDOW_ADMIN_GUIDES;
             }
-            if (showAdminGuidesWindow)
+            if (WindowManager.WINDOW_ADMIN_GUIDES)
             {
-                if (ImGui.Button("Popular guias"))
+                ImGui.Begin("Administracion de guias", ref WindowManager.WINDOW_ADMIN_GUIDES, ImGuiWindowFlags.AlwaysAutoResize);
+
+                ImGui.Text("Buscar ");
+                ImGui.SameLine();
+                ImGui.InputTextWithHint("##SearchInputGuides", "Buscar guía", ref searchInputAdminGuides, 100);
+                ImGui.BeginChild("Guías", new Vector2(440, 150), ImGuiChildFlags.Border | ImGuiChildFlags.FrameStyle);
+
+                filteredAdminGuides = FilterGuides();
+                foreach (var guide in filteredAdminGuides)
                 {
-                    ApiManager.PopulateGuidesToDatabase(guides);
+                    Vector4 prevColor = ImGui.GetStyle().Colors[(int)ImGuiCol.Text];
+                    if (guide.IsFeatured)
+                    {
+                        Vector4 _color = ColorManager.FromRGBA(excRedColor, excGreenColor, excBlueColor, 1f);
+                        ImGui.GetStyle().Colors[(int)ImGuiCol.Text] = _color;
+                    }
+                    if (ImGui.Selectable($"{guide.Id} {guide.Title} - {guide.Author}"))
+                    {
+                        int guideId = guide.Id;
+                        selectedAdminGuide = guide;
+                        WindowManager.WINDOW_SELECTED_ADMIN_GUIDE = true;
+                    }
+                    if (guide.IsFeatured)
+                    {
+                        ImGui.GetStyle().Colors[(int)ImGuiCol.Text] = prevColor;
+                    }
                 }
+                ImGui.EndChild();
+                // if (ImGui.Button("Popular guias"))
+                // {
+                //     ApiManager.PopulateGuidesToDatabase(guides);
+                // }
+                ImGui.End();
             }
-            ImGui.Spacing();
+
+            if (WindowManager.WINDOW_SELECTED_ADMIN_GUIDE)
+            {
+                if (selectedAdminGuide != null)
+                {
+                    Vector4 prevColor = ImGui.GetStyle().Colors[(int)ImGuiCol.Text];
+                    if (selectedAdminGuide.IsFeatured)
+                    {
+                        Vector4 _color = ColorManager.FromRGBA(excRedColor, excGreenColor, excBlueColor, 1f);
+                        ImGui.GetStyle().Colors[(int)ImGuiCol.Text] = _color;
+                    }
+                    ImGui.SetNextWindowPos(centerOfScreenView, ImGuiCond.Appearing, new Vector2(0.5f, 0.5f));
+
+                    ImGui.Begin($"{selectedAdminGuide.Title} - {selectedAdminGuide.Author}", ref WindowManager.WINDOW_SELECTED_ADMIN_GUIDE);
+                    if (selectedAdminGuide.IsFeatured)
+                    {
+                        ImGui.GetStyle().Colors[(int)ImGuiCol.Text] = prevColor;
+                    }
+
+                    ImGui.Text("Titulo:");
+                    ImGui.InputText("##Title", ref selectedGuideTitle, 100);
+                    ImGui.Text("Autor:");
+                    ImGui.InputText("##Author", ref selectedGuideAuthor, 100);
+                    ImGui.Text("Imagen:");
+                    ImGui.InputText("##Image", ref selectedGuideImage, 100);
+                    ImGui.Text("Video:");
+                    ImGui.InputText("##Video", ref selectedGuideVideo, 100);
+                    ImGui.Text("Cuerpo:");
+                    ImGui.InputTextMultiline("##Body", ref selectedGuideBody, 1000, new Vector2(400, 200));
+                    ImGui.Text("Tags:");
+                    ImGui.InputText("##Tags", ref selectedGuideTags, 100);
+                    ImGui.Text("Relacionadas:");
+                    ImGui.InputText("##RelatedGuides", ref selectedGuideRelatedGuides, 100);
+                    ImGui.Checkbox("Destacada", ref selectedGuideIsFeatured);
+                    if (ImGui.Button("Guardar"))
+                    {
+                        // ApiManager.UpdateGuide(selectedAdminGuide);
+                    }
+                    ImGui.End();
+                }
+                ImGui.Spacing();
+            }
         }
 
-        List<Guide> filteredGuides = new();
+
 
         private List<Guide> FilterGuides()
         {
@@ -644,7 +717,7 @@ namespace MUPVPUI
             }
             else
             {
-                string searchTerm = RemoveDiacritics(searchInputGuides.ToLowerInvariant()); // Quitar acentos y convertir a minúsculas
+                string searchTerm = RemoveDiacritics(searchInputGuides.ToLowerInvariant());
 
                 return guides
                     .OrderByDescending(guide =>
@@ -655,65 +728,39 @@ namespace MUPVPUI
             }
         }
 
-        // private int GetGuidePoints(Guide guide)
-        // {
-        //     int points = 0;
-        //     string inputSearch = RemoveDiacritics(searchInputGuides).ToLower();
-        //     Console.WriteLine(inputSearch);
-        //     List<string> title = RemoveDiacritics(guide.Title).Split(" ").ToList();
-        //     string author = RemoveDiacritics(guide.Author);
-        //     List<string> tags = guide.Tags;
-
-        //     foreach (string tag in tags)
-        //     {
-        //         if (RemoveDiacritics(tag).ToLower().Contains(inputSearch))
-        //         {
-        //             points += 10;
-        //         }
-        //     }
-
-        //     foreach (string word in title)
-        //     {
-        //         if (inputSearch.Contains(word))
-        //         {
-        //             points += 5;
-        //         }
-        //     }
-
-        //     if (inputSearch.Contains(author))
-        //     {
-        //         points += 15;
-        //     }
-
-
-        //     return points;
-        // }
-        public static string RemoveDiacritics(string text)
+        private List<Guide> FilterAdminGuides()
         {
-            string normalized = text.Normalize(System.Text.NormalizationForm.FormD);
-            var sb = new StringBuilder();
-            foreach (char c in from c in normalized
-                               let u = CharUnicodeInfo.GetUnicodeCategory(c)
-                               where u != UnicodeCategory.NonSpacingMark
-                               select c)
+            if (searchInputAdminGuides == "")
             {
-                sb.Append(c);
+                return guides.OrderByDescending(guide => guide.IsFeatured).ToList();
             }
-            return sb.ToString().Normalize(NormalizationForm.FormC);
+            else
+            {
+                string searchTerm = RemoveDiacritics(searchInputAdminGuides.ToLowerInvariant());
+
+                return guides
+                    .OrderByDescending(guide =>
+                        (RemoveDiacritics(guide.Title.ToLowerInvariant()).Contains(searchTerm) ? 1 : 0) +
+                        guide.Tags.Count(tag => RemoveDiacritics(tag.ToLowerInvariant()).Contains(searchTerm)) +
+                        (RemoveDiacritics(guide.Author.ToLowerInvariant()).Contains(searchTerm) ? 1 : 0))
+                    .ToList();
+            }
         }
 
         private void RenderizeUserTools()
         {
+            // USER BUTTONS
 
             ImGui.SeparatorText("Opciones de usuario");
             if (ImGui.Button("Abrir guias", new Vector2(240, 25)))
             {
-                showGuidesWindow = !showGuidesWindow;
+                WindowManager.WINDOW_GUIDES = !WindowManager.WINDOW_GUIDES;
             }
-            if (showGuidesWindow)
-            {
 
-                ImGui.Begin("Guías", ref showGuidesWindow, ImGuiWindowFlags.AlwaysAutoResize);
+            // RENDER LIST GUIDES WINDOW
+            if (WindowManager.WINDOW_GUIDES)
+            {
+                ImGui.Begin("Guías", ref WindowManager.WINDOW_GUIDES, ImGuiWindowFlags.AlwaysAutoResize);
                 ImGui.Text("Buscar ");
                 ImGui.SameLine();
                 ImGui.InputTextWithHint("##SearchInputGuides", "Buscar guía", ref searchInputGuides, 100);
@@ -733,36 +780,29 @@ namespace MUPVPUI
                         int guideId = guide.Id;
                         if (selectedGuide == null)
                         {
+
+                            guidesHistory.Add(guide);
                             selectedGuide = guide;
-                            showSelectedGuideWindow = true;
+                            WindowManager.WINDOW_SELECTED_GUIDE = true;
+
+
                         }
                         else
                         {
                             if (selectedGuide.Id == guideId)
                             {
-                                showSelectedGuideWindow = false;
+                                selectedGuide = null;
+                                WindowManager.WINDOW_SELECTED_GUIDE = false;
+                                guidesHistory = new();
                             }
                             else
                             {
+                                guidesHistory.Add(guide);
                                 selectedGuide = guide;
-                                showSelectedGuideWindow = true;
+                                WindowManager.WINDOW_SELECTED_GUIDE = true;
+
                             }
                         }
-                        // if (selectedGuide != null)
-                        // {
-                        //     if (selectedGuide.Id == guideId)
-                        //     {
-                        //         showSelectedGuideWindow = false;
-                        //         selectedGuide = null;
-                        //     }
-                        // }
-                        // else
-                        // {
-
-                        //     selectedGuide = guide;
-                        //     showSelectedGuideWindow = true;
-
-                        // }
                         Console.WriteLine($"Seleccionaste la guía {guide.Title}");
 
                     }
@@ -776,7 +816,9 @@ namespace MUPVPUI
                 ImGui.End();
             }
 
-            if (showSelectedGuideWindow)
+
+            // RENDER SELECTED GUIDE WINDOW
+            if (WindowManager.WINDOW_SELECTED_GUIDE)
             {
                 if (selectedGuide != null)
                 {
@@ -787,7 +829,7 @@ namespace MUPVPUI
                     }
                     else
                     {
-                        ImGui.SetNextWindowPos(previousGuideWindowPosition, ImGuiCond.Appearing, new Vector2(0.5f, 0.5f));
+                        ImGui.SetNextWindowPos(previousGuideWindowPosition, ImGuiCond.Appearing, new Vector2(0f, 0f));
                     }
                     Vector4 prevColor = ImGui.GetStyle().Colors[(int)ImGuiCol.Text];
                     if (selectedGuide.IsFeatured)
@@ -795,13 +837,29 @@ namespace MUPVPUI
                         Vector4 _color = ColorManager.FromRGBA(excRedColor, excGreenColor, excBlueColor, 1f);
                         ImGui.GetStyle().Colors[(int)ImGuiCol.Text] = _color;
                     }
-                    ImGui.SetNextWindowSize(new Vector2(400, 600), ImGuiCond.Appearing);
-                    ImGui.Begin($"{selectedGuide.Title} - {selectedGuide.Author}", ref showSelectedGuideWindow, ImGuiWindowFlags.AlwaysVerticalScrollbar | ImGuiWindowFlags.NoResize);
 
+
+                    var estimatedWidth = ImGui.GetStyle().FramePadding.X * 2 + 400;
+                    ImGui.SetNextWindowSize(new Vector2(estimatedWidth, 500), ImGuiCond.Appearing);
+                    ImGui.Begin($"{selectedGuide.Title} - {selectedGuide.Author}", ref WindowManager.WINDOW_SELECTED_GUIDE);
+                    previousGuideWindowPosition = ImGui.GetWindowPos();
                     if (selectedGuide.IsFeatured)
                     {
                         ImGui.GetStyle().Colors[(int)ImGuiCol.Text] = prevColor;
                     }
+                    Console.WriteLine(guidesHistory.Count);
+                    if (guidesHistory.Count > 1)
+                    {
+                        ImGui.ArrowButton("##back", ImGuiDir.Left);
+                        if (ImGui.IsItemClicked())
+                        {
+                            selectedGuide = guidesHistory[guidesHistory.Count - 2];
+                            guidesHistory.RemoveAt(guidesHistory.Count - 1);
+                        }
+                    }
+                    // ImGui.MenuItem("Atras", "CTRL+Z", guidesHistory.Length > 1, true);
+
+                    // ImGui.EndMenu();
 
                     // Render image 
                     if (selectedGuide.Image != "")
@@ -813,11 +871,69 @@ namespace MUPVPUI
                         ImGui.Image(imageHandle, new Vector2(400, 280));
                     }
                     ImGui.Spacing();
+                    // Render body
                     foreach (var paragraph in selectedGuide.Body)
                     {
                         ImGui.TextWrapped(paragraph);
                         // ImGui.TextWrapped("HOLA\nComo estas");
                     }
+                    // Render links
+                    Vector4 normalTextColor = ImGui.GetStyle().Colors[(int)ImGuiCol.Text];
+                    ImGui.GetStyle().Colors[(int)ImGuiCol.Text] = new Vector4(0.41568627450980394f, 0.32941176470588235f, 0.7764705882352941f, 1.0f);
+                    ImGui.BeginChild("selected_guide_links", new Vector2(400, 80), ImGuiChildFlags.Border | ImGuiChildFlags.FrameStyle);
+                    ImGui.SeparatorText("Enlaces");
+                    style.Colors[(int)ImGuiCol.HeaderHovered] = new Vector4(0.41568627450980394f, 0.32941176470588235f, 0.7764705882352941f, 1.0f);
+                    ImGui.GetStyle().Colors[(int)ImGuiCol.Text] = normalTextColor;
+                    if (selectedGuide.Video.Length > 0)
+                    {
+                        ImGui.Text("Video: ");
+                        ImGui.SameLine();
+                        ImGui.Selectable(selectedGuide.Video);
+                        if (ImGui.IsItemClicked())
+                        {
+                            var info = new ProcessStartInfo
+                            {
+                                FileName = selectedGuide.Video,
+                                UseShellExecute = true
+                            };
+                            Process.Start(info);
+                        }
+                        if (ImGui.IsItemHovered())
+                        {
+                            ImGui.SetMouseCursor(ImGuiMouseCursor.Hand);
+                        }
+                    }
+                    ImGui.EndChild();
+                    ImGui.BeginChild("related_guides", new Vector2(400, 80), ImGuiChildFlags.Border | ImGuiChildFlags.FrameStyle);
+                    ImGui.GetStyle().Colors[(int)ImGuiCol.Text] = new Vector4(0.41568627450980394f, 0.32941176470588235f, 0.7764705882352941f, 1.0f);
+                    ImGui.SeparatorText("Guías relacionadas");
+                    ImGui.GetStyle().Colors[(int)ImGuiCol.Text] = normalTextColor;
+                    if (selectedGuide.RelatedGuides.Count > 0)
+                    {
+                        foreach (var relatedGuide in selectedGuide.RelatedGuides)
+                        {
+                            string titleGuide = guides.Where(guide => guide.Id == relatedGuide).Select(guide => guide.Title).FirstOrDefault();
+                            ImGui.Selectable(titleGuide);
+                            if (ImGui.IsItemClicked())
+                            {
+                                var guide = guides.Find(guide => guide.Id == relatedGuide);
+                                if (guide != null)
+                                {
+                                    // TODO: HISTORY OF GUIDES (BACK PAGE, NEXT PAGE)
+                                    guidesHistory.Add(guide);
+                                    selectedGuide = guide;
+                                }
+                            }
+                            if (ImGui.IsItemHovered())
+                            {
+                                ImGui.SetMouseCursor(ImGuiMouseCursor.Hand);
+                            }
+                        }
+                    }
+
+                    ImGui.EndChild();
+                    style.Colors[(int)ImGuiCol.HeaderHovered] = new Vector4(0.1803921610116959f, 0.1882352977991104f, 0.196078434586525f, 1.0f);
+
                     ImGui.End();
 
                 }
@@ -842,11 +958,6 @@ namespace MUPVPUI
             style.SeparatorTextAlign = new Vector2(0.5f, 0.5f);
             style.SeparatorTextBorderSize = 1f;
             style.SeparatorTextPadding = new Vector2(0f, 2f);
-
-
-
-
-
         }
 
         private void ConfigureOverlaySize()
@@ -856,11 +967,6 @@ namespace MUPVPUI
                 this.Size = new(screenWidth, screenHeight);
                 this.Position = new(0, 0);
             }
-        }
-
-        private void CheckSessionState()
-        {
-
         }
 
         private Vector4 GetUserColor(User user)
@@ -987,7 +1093,30 @@ namespace MUPVPUI
             guides = ApiManager.GetGuidesFromDB();
             Console.WriteLine($"Guides count: {guides.ToArray()[0].Image}");
             LoadImagesFromGuides();
+            try
+            {
+                urlVersion = (WebRequest.Create("https://raw.githubusercontent.com/voidexiled/mupvponline-staff-helper/main/version.txt") as HttpWebRequest).GetResponse().ResponseUri.ToString();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+
+            var tempGithubVersion = urlVersion.Replace(".", "");
+            var tempLocalVersion = currentVersion.Replace(".", "");
+
+            if (int.Parse(tempGithubVersion) > int.Parse(tempLocalVersion))
+            {
+                outdated = true;
+            }
+            else
+            {
+                outdated = false;
+            }
+
         }
+        bool outdated = false;
         private Dictionary<int, byte[]> imageBytes = new();
         private IntPtr imageHandle;
         private uint imageWidth;
@@ -1010,7 +1139,7 @@ namespace MUPVPUI
 
 
         }
-
+        float downloadUpdateProgress = 0.0f;
         protected override void Render()
         {
             ConfigureStylesImGui(); // Configuro los estilos por defecto que tendra la interfaz
@@ -1019,6 +1148,25 @@ namespace MUPVPUI
             ConfigureOverlaySize(); // Obtengo el tamaño de la pantalla y resizeo el overlay
                                     //ImGui.ShowDemoWindow();
             SetupImGuiStyle();
+
+            if (outdated)
+            {
+                ImGui.SetNextWindowSize(new Vector2(250, 400), ImGuiCond.FirstUseEver);
+                ImGui.Begin("Actualización disponible",
+                        ImGuiWindowFlags.AlwaysAutoResize);
+                ImGui.Text("Hay una nueva versión disponible");
+
+
+                if (ImGui.Button("Descargar", new Vector2(240, 25)))
+                {
+                    Process.Start("Updater.exe");
+                    this.Close();
+                }
+
+                // ImGui.ProgressBar(downloadUpdateProgress, new Vector2(240, 25));
+                ImGui.End();
+                return;
+            }
 
 
             // ImGui.ShowFontSelector("Font Selector");
@@ -1249,15 +1397,13 @@ namespace MUPVPUI
 
         private void HandleAddSetToRewardList(ArmorSet set)
         {
-
-
-
             ProcessedItem newItem = new(set.Type, set.Name);
             processedItems.Add(newItem);
 
-            if (!showRewardListWindow)
+
+            if (!WindowManager.WINDOW_REWARD_LIST)
             {
-                showRewardListWindow = true;
+                WindowManager.WINDOW_REWARD_LIST = true;
             }
 
             selectedGroup = (int)newItem.Group;
@@ -1274,21 +1420,6 @@ namespace MUPVPUI
                 selectedOptions.AddRange(newItem.OptionsList);
             }
             selectedItem = newItem;
-        }
-
-        // Manejar clics en selectables
-        private void HandleSelectableClick(Item item)
-        {
-            // Lógica específica para cada item
-            Console.WriteLine($"Clic en {item.Name}");
-
-            // Agrega aquí la lógica que deseas realizar al hacer clic en un item específico
-            ProcessedItem newItem = new(item.Group, item.Type, item.Name, item.Slot);
-            processedItems.Add(newItem);
-            if (!showRewardListWindow)
-            {
-                showRewardListWindow = true;
-            }
         }
 
         private void HandleSelectItem(ProcessedItem item)
@@ -1331,5 +1462,20 @@ namespace MUPVPUI
             }
         }
 
+        public static string RemoveDiacritics(string text)
+        {
+            string normalized = text.Normalize(System.Text.NormalizationForm.FormD);
+            var sb = new StringBuilder();
+            foreach (char c in from c in normalized
+                               let u = CharUnicodeInfo.GetUnicodeCategory(c)
+                               where u != UnicodeCategory.NonSpacingMark
+                               select c)
+            {
+                sb.Append(c);
+            }
+            return sb.ToString().Normalize(NormalizationForm.FormC);
+        }
+
     }
+
 }
