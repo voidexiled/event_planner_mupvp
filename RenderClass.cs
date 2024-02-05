@@ -1095,7 +1095,10 @@ namespace MUPVPUI
             LoadImagesFromGuides();
             try
             {
-                urlVersion = (WebRequest.Create("https://raw.githubusercontent.com/voidexiled/mupvponline-staff-helper/main/version.txt") as HttpWebRequest).GetResponse().ResponseUri.ToString();
+                // urlVersion = (WebRequest.Create("https://raw.githubusercontent.com/voidexiled/event_planner_mupvp/main/version.txt") as HttpWebRequest).GetResponse().ResponseUri.ToString();
+                HttpClient client = new();
+                var req = client.GetStringAsync("https://raw.githubusercontent.com/voidexiled/event_planner_mupvp/main/version.txt");
+                urlVersion = req.Result;
             }
             catch (Exception e)
             {
@@ -1104,7 +1107,9 @@ namespace MUPVPUI
 
 
             var tempGithubVersion = urlVersion.Replace(".", "");
+            Console.WriteLine($"Github version: {tempGithubVersion}");
             var tempLocalVersion = currentVersion.Replace(".", "");
+            Console.WriteLine($"Local version: {tempLocalVersion}");
 
             if (int.Parse(tempGithubVersion) > int.Parse(tempLocalVersion))
             {
