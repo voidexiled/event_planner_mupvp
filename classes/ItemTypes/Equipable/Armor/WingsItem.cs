@@ -1,3 +1,5 @@
+using event_planner_mupvp.enums;
+
 public class WingsItem : Equipable
 {
     public int Defense { get; set; }

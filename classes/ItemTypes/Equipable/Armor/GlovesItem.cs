@@ -1,3 +1,5 @@
+using event_planner_mupvp.enums;
+
 public class GlovesItem : Armor
 {
     public int AttackSpeed { get; set; }

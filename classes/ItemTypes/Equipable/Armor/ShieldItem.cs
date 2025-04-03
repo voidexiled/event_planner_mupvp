@@ -1,3 +1,5 @@
+using event_planner_mupvp.enums;
+
 public class ShieldItem : Equipable
 {
     public int Defense { get; set; }

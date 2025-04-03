@@ -1,3 +1,5 @@
+using event_planner_mupvp.enums;
+
 public class ConsumablesJewelsBoxesItem : Item
 {
     public int Value { get; set; }

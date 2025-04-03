@@ -11,6 +11,7 @@ public enum SlotTypes
     PET_TYPE = 8,
     PENDANT_TYPE = 9,
     RING_TYPE = 10,
-    NOTHING_TYPE = 11,
+    SET_TYPE = 11,
+    NOTHING_TYPE = 12,
 
 }

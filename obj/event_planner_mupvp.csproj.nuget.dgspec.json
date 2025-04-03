@@ -1,38 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jalom\\Desktop\\NPM Projects\\cs\\event_planner_mupvp\\event_planner_mupvp.csproj": {}
+    "C:\\Users\\jalomo\\Desktop\\Proyectos\\CSharp\\event_planner_mupvp\\event_planner_mupvp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jalom\\Desktop\\NPM Projects\\cs\\event_planner_mupvp\\event_planner_mupvp.csproj": {
+    "C:\\Users\\jalomo\\Desktop\\Proyectos\\CSharp\\event_planner_mupvp\\event_planner_mupvp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jalom\\Desktop\\NPM Projects\\cs\\event_planner_mupvp\\event_planner_mupvp.csproj",
+        "projectUniqueName": "C:\\Users\\jalomo\\Desktop\\Proyectos\\CSharp\\event_planner_mupvp\\event_planner_mupvp.csproj",
         "projectName": "MuPvpTool",
-        "projectPath": "C:\\Users\\jalom\\Desktop\\NPM Projects\\cs\\event_planner_mupvp\\event_planner_mupvp.csproj",
-        "packagesPath": "C:\\Users\\jalom\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jalom\\Desktop\\NPM Projects\\cs\\event_planner_mupvp\\obj\\",
+        "projectPath": "C:\\Users\\jalomo\\Desktop\\Proyectos\\CSharp\\event_planner_mupvp\\event_planner_mupvp.csproj",
+        "packagesPath": "C:\\Users\\jalomo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jalomo\\Desktop\\Proyectos\\CSharp\\event_planner_mupvp\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\jalom\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\jalomo\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net7.0-windows"
+          "net8.0-windows"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net7.0-windows7.0": {
-            "targetAlias": "net7.0-windows",
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows",
             "projectReferences": {}
           }
         },
@@ -40,15 +32,20 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
-        "net7.0-windows7.0": {
-          "targetAlias": "net7.0-windows",
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
           "dependencies": {
             "ClickableTransparentOverlay": {
               "target": "Package",
-              "version": "[9.2.0, )"
+              "version": "[11.1.0, )"
             },
             "FireSharp": {
               "target": "Package",
@@ -56,11 +53,11 @@
             },
             "FirebaseAdmin": {
               "target": "Package",
-              "version": "[2.4.0, )"
+              "version": "[3.1.0, )"
             },
             "ImGui.NET": {
               "target": "Package",
-              "version": "[1.90.0.1, )"
+              "version": "[1.91.6.1, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
@@ -68,27 +65,15 @@
             },
             "SixLabors.Fonts": {
               "target": "Package",
-              "version": "[2.0.1, )"
+              "version": "[2.1.2, )"
             },
             "SixLabors.ImageSharp": {
               "target": "Package",
-              "version": "[3.1.2, )"
-            },
-            "Veldrid.ImGui": {
-              "target": "Package",
-              "version": "[5.72.0, )"
-            },
-            "Vortice.D3DCompiler": {
-              "target": "Package",
-              "version": "[3.3.4, )"
-            },
-            "Vortice.Direct3D11": {
-              "target": "Package",
-              "version": "[3.3.4, )"
+              "version": "[3.1.7, )"
             },
             "Vortice.Mathematics": {
               "target": "Package",
-              "version": "[1.7.6, )"
+              "version": "[1.9.3, )"
             }
           },
           "imports": [
@@ -105,15 +90,15 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
-              "version": "[7.0.5, 7.0.5]"
+              "version": "[8.0.14, 8.0.14]"
             },
             {
               "name": "Microsoft.NETCore.App.Runtime.win-x64",
-              "version": "[7.0.5, 7.0.5]"
+              "version": "[8.0.14, 8.0.14]"
             },
             {
               "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
-              "version": "[7.0.5, 7.0.5]"
+              "version": "[8.0.14, 8.0.14]"
             }
           ],
           "frameworkReferences": {
@@ -121,7 +106,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.407/PortableRuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {

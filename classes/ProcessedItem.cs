@@ -1,94 +1,114 @@
+// classes/ProcessedItem.cs
+
+using System.Text;
+using event_planner_mupvp.enums;
+using event_planner_mupvp.lib;
+
+// Para ExcManager
+
+// Para StringBuilder
+
+namespace event_planner_mupvp.classes;
+
+/// <summary>
+///     Representa una instancia de un item con sus modificaciones específicas
+///     tal como se maneja en la lista de recompensas.
+/// </summary>
 public class ProcessedItem
 {
-
-    public string Name { get; set; } = "";
-    public SlotTypes Slot { get; set; }
+    #region Base Item Properties
 
     public ItemGroups Group { get; set; }
     public int Type { get; set; }
-    public int PlusLevel { get; set; } = 0;
-    public bool Skill { get; set; } = false;
-    public bool Luck { get; set; } = false;
-    public int Option { get; set; } = 0;
+    public string Name { get; set; }
+    public SlotTypes Slot { get; set; }
+
+    #endregion
+
+    #region Modifiable Properties
+
+    public int PlusLevel { get; set; }
+    public bool Skill { get; set; }
+    public bool Luck { get; set; }
     public List<Option> OptionsList { get; set; }
+    public int ExcellentOption { get; set; } // Represents original 'Option' field
 
-    public int OptionTotal { get; set; }
-    public int Time { get; set; } = 1;
+    #endregion
 
-    public ArmorSet? Set { get; set; }
+    #region Constructors
 
-    public ProcessedItem()
-    {
-        OptionsList = new List<Option>();
-    }
     public ProcessedItem(ItemGroups group, int type, string name, SlotTypes slot)
     {
         Group = group;
         Type = type;
-        Name = name;
+        Name = name ?? "Unknown Item";
         Slot = slot;
         OptionsList = new List<Option>();
-    }
-    public ProcessedItem(ItemGroups group, int type, string name, SlotTypes slot, int plusLevel, bool skill, bool luck, int option)
-    {
-        Group = group;
-        Type = type;
-        Name = name;
-        Slot = slot;
-        PlusLevel = plusLevel;
-        Skill = skill;
-        Luck = luck;
-        Option = option;
-        OptionsList = new List<Option>();
-
+        // Default values (0, false, 0) assigned implicitly or explicitly if needed
     }
 
-    public ProcessedItem(int setType, string name)
+    public ProcessedItem(int setTypeIndex, string setName) // For ArmorSet
     {
-        Set = new(setType, name); // set constructor
-        Name = name;
+        Group = ItemGroups.SETS; // Or appropriate group
+        Type = setTypeIndex;
+        Name = setName ?? "Unknown Set";
+        Slot = SlotTypes.SET_TYPE; // Representative slot
         OptionsList = new List<Option>();
     }
 
+    #endregion
 
-    public ProcessedItem(int setType, string name, int plusLevel, bool skill, bool luck, int option)
-    {
-        Set = new(setType, name); // set constructor
-        Type = setType;
-        Name = name;
-        PlusLevel = plusLevel;
-        Skill = skill;
-        Luck = luck;
-        Option = option;
-        OptionsList = new List<Option>();
-
-    }
+    #region Methods
 
     public string GetCommand()
     {
-        return ToString();
+        return GetCommand(PlusLevel, Skill, Luck, OptionsList, ExcellentOption);
     }
 
-    public bool IsSet() => Set != null;
-
-    public bool IsItem() => !IsSet();
-
-    public override string ToString()
+    public string GetCommand(int plusLevel, bool skill, bool luck, List<Option> excOptions, int excellentAncientOption)
     {
-        string s = "";
+        var excellentOptionsValue = excOptions?.Sum(opt => opt.Value) ?? 0;
+        // !!! ADJUST FORMAT TO YOUR SERVER !!!
+        var command = "/make";
 
-        int skill = Skill ? 1 : 0;
-        int luck = Luck ? 1 : 0;
-        if (IsSet())
-        {
-            s = $"/makeset {Set.Type} {PlusLevel} {skill} {luck} {Option} {ExcManager.GetExcOptionValue(OptionsList)}";
-
-        }
-        else
-        {
-            int group = (int)Group;
-            s = $"/make {group} {Type} {PlusLevel} {skill} {luck} {Option} {ExcManager.GetExcOptionValue(OptionsList)}";
-        }
-        return s;
+        if (Slot == SlotTypes.SET_TYPE)
+            command = "/makeset";
+        return $"{command} {(int)Group} {Type} {plusLevel} {(skill ? 1 : 0)} {(luck ? 1 : 0)} {excellentAncientOption} {excellentOptionsValue}";
+        
     }
+
+    public bool IsFullExcellent()
+    {
+        List<Option>? fullOptionSet = ExcManager.GetApplicableOptions(Slot);
+        if (fullOptionSet == null || fullOptionSet.Count == 0) return false;
+        return OptionsList.Count == fullOptionSet.Count && fullOptionSet.All(opt => OptionsList.Contains(opt));
+    }
+
+    public ProcessedItem Clone()
+    {
+        var clone = new ProcessedItem(Group, Type, Name, Slot)
+        {
+            PlusLevel = PlusLevel,
+            Skill = Skill,
+            Luck = Luck,
+            ExcellentOption = ExcellentOption,
+            OptionsList = new List<Option>(OptionsList) // New list, shared Option refs
+        };
+        return clone;
+    }
+
+    public string GetDecoratedName()
+    {
+        var sb = new StringBuilder();
+        sb.Append(Name);
+        if (PlusLevel > 0) sb.Append($" +{PlusLevel}");
+        if (Skill) sb.Append(" +S");
+        if (Luck) sb.Append(" +L");
+        var excCount = OptionsList.Count;
+        if (excCount > 0) sb.Append($" +{excCount}Exc");
+        // Add other decorators if needed (e.g., Ancient)
+        return sb.ToString();
+    }
+
+    #endregion
 }

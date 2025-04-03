@@ -1,3 +1,5 @@
+namespace event_planner_mupvp.enums;
+
 public enum ItemGroups
 {
     ALL_ITEMS = -1,
@@ -17,4 +19,5 @@ public enum ItemGroups
     PETS_ACC_ITEM = 13,
     CONSUMABLES_JEWELS_BOXES_ITEM = 14,
     SCROLLS_PARCHMENTS_ITEM = 15,
+    SETS = 16
 }

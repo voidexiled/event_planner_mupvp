@@ -3,6 +3,8 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 
+namespace event_planner_mupvp.lib;
+
 public static class SessionManager
 {
     private const string DATA_FILE_PATH = "session.dat";

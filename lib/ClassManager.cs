@@ -1,5 +1,5 @@
-using SharpDX.Direct3D11;
 
+namespace event_planner_mupvp.lib;
 public static class ClassManager
 {
 

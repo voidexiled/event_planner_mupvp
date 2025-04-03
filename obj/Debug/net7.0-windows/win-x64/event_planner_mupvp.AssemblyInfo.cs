@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("Aplicacion oficial para el STAFF de MU PVP ONLINE")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+14ba00b72535622b5a97dddf742dc364c4828859")]
 [assembly: System.Reflection.AssemblyProductAttribute("MuPvpTool")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MuPvpTool")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

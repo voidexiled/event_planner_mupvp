@@ -1,44 +1,113 @@
-﻿using System.Runtime.InteropServices;
-using ImGuiNET;
-using MUPVPUI;
-namespace Main
+﻿// Program.cs (en la raíz)
+
+#region Usings
+
+using System.Runtime.InteropServices;
+using event_planner_mupvp.lib;
+using SixLabors.ImageSharp.Memory;
+// Para SessionManager, ItemManager, ApiManager
+
+// Para RenderClass
+
+#endregion
+
+namespace event_planner_mupvp;
+
+// O tu namespace principal
+/// <summary>
+///     Punto de entrada principal de la aplicación.
+/// </summary>
+public static class Program // Clase estática es común para Main
 {
-    public class Program
+    #region DllImports (Console Window Handling)
+
+    [DllImport("kernel32.dll", SetLastError = true)]
+    private static extern IntPtr GetConsoleWindow();
+
+    [DllImport("user32.dll")]
+    private static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+
+    private const int SW_HIDE = 0;
+    private const int SW_SHOW = 5;
+
+    #endregion
+
+    /// <summary>
+    ///     Método principal de la aplicación.
+    /// </summary>
+    [STAThread] // Recomendado para aplicaciones con UI o COM
+    public static async Task Main(string[] args)
     {
+        // 1. Ocultar la ventana de consola (Opcional)
+        HideConsoleWindow();
 
-
-
-        [DllImport("kernel32.dll")]
-        static extern IntPtr GetConsoleWindow();
-
-        [DllImport("user32.dll")]
-        static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
-
-        const int SW_HIDE = 0;
-        const int SW_SHOW = 5;
-
-
-        public static void Main(string[] args)
+        try
         {
-
-            //var defFont = ImGui.GetIO().Fonts.AddFontFromFileTTF("C:\\Windows\\Fonts\\Arial.ttf", 13, null, ImGui.GetIO().Fonts.GetGlyphRangesDefault());
-
-
-
-            var handle = GetConsoleWindow();
-
+            // 2. Inicializar Managers Esenciales (Antes de crear el overlay)
+            MemoryAllocator.Default.Allocate<byte>(0, AllocationOptions.None);
+            Console.WriteLine("Initializing Managers...");
             SessionManager.LoadSession();
+            ItemManager.PopulateItems(); // Asegúrate que esto cargue los datos necesarios
+            // ApiManager.Initialize();
+            // Inicializar otros managers si existen (ColorManager, ExcManager no necesitan si son estáticos puros)
+            Console.WriteLine("Managers Initialized.");
 
-            RenderClass ova = new RenderClass();
-            ItemManager.PopulateItems();
-            ova.Start().Wait();
-            // Hide
-            //ShowWindow(handle, SW_SHOW);
+            // 3. Crear e Iniciar el Overlay
+            Console.WriteLine("Starting Overlay...");
+            using var overlay = new RenderClass(); // 'using' asegura Dispose al salir
+            await overlay.Run(); // Ejecuta el bucle principal de ClickableTransparentOverlay
 
-
-
+            // 4. Código después de cerrar el overlay (si es necesario)
+            Console.WriteLine("Overlay has been closed.");
         }
-        //#pragma comment(linker, "/SUBSYSTEM:windows /ENTRY:mainCRTStartup")
-
+        catch (Exception ex)
+        {
+            // Capturar cualquier error fatal durante la inicialización o ejecución
+            Console.WriteLine($"FATAL ERROR: {ex.Message}\n{ex.StackTrace}");
+            // Podrías mostrar un MessageBox aquí antes de salir
+            // MessageBox.Show($"An unexpected error occurred: {ex.Message}", "Fatal Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        finally
+        {
+            // Mostrar la consola al final si se ocultó (para ver logs de errores)
+            // ShowConsoleWindow();
+            Console.WriteLine("Application exiting.");
+        }
     }
+
+    #region Console Window Helpers
+
+    /// <summary>
+    ///     Oculta la ventana de la consola asociada a esta aplicación.
+    /// </summary>
+    private static void HideConsoleWindow()
+    {
+        try
+        {
+            var handle = GetConsoleWindow();
+            if (handle != IntPtr.Zero) ShowWindow(handle, SW_HIDE);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error hiding console: {ex.Message}");
+        }
+    }
+
+    /// <summary>
+    ///     Muestra la ventana de la consola asociada a esta aplicación.
+    /// </summary>
+    private static void ShowConsoleWindow()
+    {
+        try
+        {
+            var handle = GetConsoleWindow();
+            if (handle != IntPtr.Zero) ShowWindow(handle, SW_SHOW);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error showing console: {ex.Message}");
+        }
+    }
+
+    #endregion
 }

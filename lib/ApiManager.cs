@@ -1,7 +1,10 @@
 
 using System.Numerics;
+using FirebaseAdmin;
 using FireSharp.Config;
 using FireSharp.Interfaces;
+
+namespace event_planner_mupvp.lib;
 
 public static class ApiManager
 {
@@ -16,7 +19,6 @@ public static class ApiManager
     public static IFirebaseClient client = new FireSharp.FirebaseClient(config);
     public static bool IsKeyRegistered(string key)
     {
-
         return true;
     }
 
@@ -32,6 +34,7 @@ public static class ApiManager
         {
             var response = client.Set("users/" + user.Key, user);
 
+            // Verify response status
             messageColor = new Vector4(0f, 1f, 0f, 1f);
             adminMessage = "Success!";
 
@@ -51,13 +54,14 @@ public static class ApiManager
         try
         {
             var response = client.Get("users/" + key);
+            Console.WriteLine(response.Body);
             if (response.Body != "null")
             {
                 var _user = response.ResultAs<Dictionary<string, string>>();
                 User user = new()
                 {
                     Key = key,
-                    UserType = (UserTypes)Enum.Parse(typeof(UserTypes), _user["UserType"])
+                    UserType = (UserTypes)Enum.Parse(typeof(UserTypes), _user["usertype"])
                 };
                 Console.WriteLine($"User: {user.Key}, Type: {user.UserType}");
                 SessionManager.currentUser = user;
@@ -94,6 +98,7 @@ public static class ApiManager
         try
         {
             var response = client.Get("guides");
+            Console.WriteLine(response.Body);
             if (response.Body != "null")
             {
                 return response.ResultAs<List<Guide>>();

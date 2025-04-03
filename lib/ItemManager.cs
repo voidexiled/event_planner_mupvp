@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows.Markup;
+using event_planner_mupvp.enums;
 using ImGuiNET;
+
+namespace event_planner_mupvp.lib;
+
 public static partial class ItemManager
 {
 
